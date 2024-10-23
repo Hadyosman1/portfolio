@@ -1,0 +1,17 @@
+{
+  "about": "About",
+  "projects": "Projects",
+  "skills": "Skills",
+  "contact": "Contact",
+  "services": "Services",
+  "toggleTheme": "Toggle Theme",
+  "intro": {
+    "heading": {
+      "line1": "Hello, I'm Hady Osman",
+      "line2": "I'm a Frontend Developer."
+    },
+    "description": "I specialize in building innovative, scalable, and maintainable web applications using cutting-edge technologies.",
+    "hireMe": "Hire Me",
+    "downloadCv": "Download CV"
+  }
+}
