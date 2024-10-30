@@ -1,37 +1,39 @@
 'use client';
 
 import { useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useRouter } from 'next/navigation';
+import { useTranslation } from '@/app/i18n/client';
 import useSpyScroll from '@/hooks/useSpyScroll';
+import Link from 'next/link';
 
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
-
 import { cn } from '@/lib/utils';
 
 const NavLinks = ({
   toggleNav,
-  isNavOpen
+  isNavOpen,
+  lng
 }: {
   isNavOpen: boolean;
   toggleNav: () => void;
+  lng: string;
 }) => {
-  const router = useRouter();
-
-  const { t } = useTranslation();
+  const {
+    t,
+    i18n: { resolvedLanguage }
+  } = useTranslation(lng, 'translation');
   const { pathWithHash, setPathWithHash } = useSpyScroll(
     '#home-sections-wrapper'
   );
 
   const links = useMemo(
     () => [
-      { href: '/#about-section', label: t('about') },
-      { href: '/#projects-section', label: t('projects') },
-      { href: '/#skills-section', label: t('skills') },
-      { href: '/#contact-section', label: t('contact') }
+      { href: `/${resolvedLanguage}#about-section`, label: t('about') },
+      { href: `/${resolvedLanguage}#projects-section`, label: t('projects') },
+      { href: `/${resolvedLanguage}#skills-section`, label: t('skills') },
+      { href: `/${resolvedLanguage}#contact-section`, label: t('contact') }
     ],
-    [t]
+    [t, resolvedLanguage]
   );
 
   const isLinkActive = (href: string) => {
@@ -40,7 +42,6 @@ const NavLinks = ({
 
   const handleNavigate = (href: string) => {
     setPathWithHash(href);
-    router.replace(href);
     if (isNavOpen) toggleNav();
   };
 
@@ -51,27 +52,32 @@ const NavLinks = ({
       {links.map(({ href, label }) => (
         <li className='w-full sm:w-auto' key={href}>
           <MotionButton
-            onClick={() => handleNavigate(href)}
+            asChild
             variant={'ghost'}
             size={'sm'}
             className={cn(
-              'w-full sm:w-auto',
-              isLinkActive(href) &&
-                'ring-1 ring-muted-foreground hover:bg-transparent',
+              'w-full transform-gpu font-semibold transition-all sm:w-auto',
+              isLinkActive(href) && 'hover:bg-transparent',
               'relative z-[1] underline-offset-2 hover:underline'
             )}
           >
-            {label}
-            {isLinkActive(href) && (
-              <motion.span
-                initial={{ opacity: 0.4 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0.4 }}
-                transition={{ ease: 'easeIn', duration: 0.2 }}
-                layoutId='nav-link'
-                className='active_link_background absolute rounded-md'
-              />
-            )}
+            <Link
+              href={href}
+              onClick={() => handleNavigate(href)}
+              data-click-sound={true}
+            >
+              {label}
+              {isLinkActive(href) && (
+                <motion.span
+                  initial={{ opacity: 0.4 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0.4 }}
+                  transition={{ ease: 'easeIn', duration: 0.2 }}
+                  layoutId='nav-link'
+                  className='active_link_background absolute rounded-md ring-1 ring-muted-foreground'
+                />
+              )}
+            </Link>
           </MotionButton>
         </li>
       ))}

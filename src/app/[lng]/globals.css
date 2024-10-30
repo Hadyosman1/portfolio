@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+  @apply scroll-pt-[60px] scroll-smooth sm:scroll-pt-[68px];
 }
 
 html[lang='ar'][dir='rtl'] body {
@@ -12,6 +12,7 @@ html[lang='ar'][dir='rtl'] body {
 
 body {
   font-family: var(--font-geist-sans), sans-serif;
+  /* background-image: url('./../../public/images/shapes/noise_bg.svg'); */
 }
 
 @layer utilities {
@@ -48,6 +49,14 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    --component-name-color: hsl(202 76% 55%);
+
+    /* Skills */
+    --skills-section-shadow: hsl(var(--background) / 0.8);
+    --skills-bg: #f4f6f6;
+    --skills-box-bg: #f2f2f2;
+    /* Skills */
   }
 
   .dark {
@@ -75,6 +84,13 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+
+    /* Skills */
+    --skills-section-shadow: hsl(var(--background));
+    --skills-bg: #141414;
+    --skills-box-bg: #0a0a0c;
+    /* Skills */
   }
 }
 
@@ -89,6 +105,10 @@ body {
 }
 
 @layer components {
+  .header_shadow {
+    @apply shadow-sm shadow-muted-foreground/40;
+  }
+
   .links_wrapper_border::after {
     content: '';
     position: absolute;
@@ -109,8 +129,7 @@ body {
   .my_picture_wrapper::after {
     content: '';
     position: absolute;
-    inset: 0;
-
+    inset: -5px;
     z-index: 2;
     background: linear-gradient(
         to top,
@@ -169,6 +188,99 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .component_name {
+    color: var(--component-name-color);
+  }
+
+  .home_section {
+    @apply py-3 sm:min-h-[calc(100svh_-_68px)];
+  }
+
+  .section_heading {
+    @apply text-center text-2xl font-bold text-foreground sm:text-4xl;
+  }
+
+  .skills_container_bg {
+    background: var(--skills-bg);
+  }
+
+  .skills_container_overlay {
+    position: relative;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: -5px;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+          to bottom,
+          var(--skills-section-shadow),
+          transparent 25%
+        ),
+        linear-gradient(to top, var(--skills-section-shadow), transparent 25%),
+        linear-gradient(to left, var(--skills-section-shadow), transparent 15%),
+        linear-gradient(to right, var(--skills-section-shadow), transparent 15%);
+    }
+  }
+
+  .skill_box {
+    position: relative;
+    display: flex;
+    aspect-ratio: 1;
+    align-items: center;
+    justify-content: center;
+    background: var(--skills-box-bg);
+    width: 56px;
+    border-radius: 12px;
+    flex-shrink: 0;
+    @apply border border-muted-foreground/15 p-3 sm:w-24 sm:p-6;
+
+    &:hover {
+      transition: all 500ms ease-in-out;
+    }
+
+    &:not(.empty) {
+      overflow: clip;
+
+      & .skill_name {
+        transition: all 300ms;
+        position: absolute;
+        padding: 6px;
+        backdrop-filter: blur(4px);
+        opacity: 0;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        max-width: 100%;
+        transform: translateY(100%) scaleY(0);
+        font-size: 8px;
+        text-align: center;
+        @apply bg-background/85 font-medium animate-out sm:text-sm;
+      }
+
+      &:hover .skill_name {
+        transform: translateY(0) scaleY(100%);
+        opacity: 100%;
+      }
+    }
+
+    &.empty {
+      filter: brightness(101%);
+      transition: all 1.5s ease-in-out;
+
+      &:hover {
+        scale: 0.75;
+        transition: all 0.3s ease-in;
+      }
+    }
+  }
 }
 
 @layer utilities {
@@ -204,7 +316,7 @@ body {
   }
   /** Icons Sizes **/
 
-  .home-section-min-h {
-    @apply min-h-[calc(100svh_-_60px)] sm:min-h-[calc(100svh_-_68px)];
+  .container-md {
+    @apply container max-w-5xl;
   }
 }

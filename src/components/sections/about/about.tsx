@@ -1,8 +1,9 @@
-const About = () => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const About = ({ lng }: { lng: string }) => {
   return (
     <section
       id='about-section'
-      className='home-section-min-h scroll-mt-[60px] sm:scroll-mt-[68px]'
+      className='home_section container-md text-white'
     >
       About
     </section>

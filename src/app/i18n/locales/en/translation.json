@@ -5,6 +5,14 @@
   "contact": "Contact",
   "services": "Services",
   "toggleTheme": "Toggle Theme",
+  "changeLanguage": "Change Language",
+  "socials": {
+    "whatsApp": "WhatsApp",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "github": "Github"
+  },
   "intro": {
     "heading": {
       "line1": "Hello, I'm Hady Osman",

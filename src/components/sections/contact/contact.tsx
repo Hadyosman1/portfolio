@@ -1,9 +1,7 @@
-const Contact = () => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Contact = ({ lng }: { lng: string }) => {
   return (
-    <section
-      id='contact-section'
-      className='home-section-min-h scroll-mt-[60px] sm:scroll-mt-[68px]'
-    >
+    <section id='contact-section' className='home_section container-md'>
       Contact
     </section>
   );

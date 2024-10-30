@@ -6,14 +6,17 @@ const useSpyScroll = (containerSelector: string = 'body') => {
   const pathname = usePathname();
 
   useEffect(() => {
-    const windowHash = window.location.hash;
-    setPathWithHash(`${pathname}${windowHash}`);
+    let timeOut: ReturnType<typeof setTimeout>;
 
     const observer = new IntersectionObserver(
       entries => {
+        clearTimeout(timeOut);
+
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            setPathWithHash(`${pathname}#${entry.target.id}`);
+            timeOut = setTimeout(() => {
+              setPathWithHash(`${pathname}#${entry.target.id}`);
+            }, 300);
           }
         });
       },

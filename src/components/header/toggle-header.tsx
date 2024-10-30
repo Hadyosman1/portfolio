@@ -11,11 +11,12 @@ const ToggleHeader = ({
 }) => {
   return (
     <Button
+      data-click-sound={true}
+      variant='outline'
+      size='icon'
       dir='ltr'
       className='ms-auto sm:hidden'
       onClick={toggleNav}
-      variant='outline'
-      size='icon'
     >
       <span className='sr-only'>
         Toggle Navigation
@@ -24,7 +25,7 @@ const ToggleHeader = ({
 
       <div
         className={
-          'relative flex h-5 w-5 flex-col items-center justify-center rounded-md transition-all'
+          'relative pointer-events-none flex h-5 w-5 flex-col items-center justify-center rounded-md transition-all'
         }
       >
         <span

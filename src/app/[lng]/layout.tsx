@@ -1,13 +1,17 @@
 import localFont from 'next/font/local';
 import { Kalam, Noto_Sans_Arabic } from 'next/font/google';
-import { cn } from '@/lib/utils';
+
+import './globals.css';
+
+import { dir } from 'i18next';
+import { languages } from '../i18n/settings';
 
 import Providers from '@/components/providers';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer';
-import RootTemplate from './template';
+import RootTemplate from '@/app/[lng]/template';
 
-import './globals.css';
+import { cn } from '@/lib/utils';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -30,44 +34,54 @@ const noto_Sans_Arabic = Noto_Sans_Arabic({
   weight: ['300', '400', '500', '600', '700', '800', '900']
 });
 
+export async function generateStaticParams() {
+  return languages.map(lng => ({ lng }));
+}
+
 export default function RootLayout({
-  children
+  children,
+  params
 }: Readonly<{
   children: React.ReactNode;
+  params: {
+    lng: string;
+  };
 }>) {
+  const { lng } = params;
+
   return (
-    <html lang='en' dir='ltr' suppressHydrationWarning>
+    <html lang={lng} dir={dir(lng)} suppressHydrationWarning>
       <head>
         <link
           rel='apple-touch-icon'
           sizes='180x180'
-          href='/apple-touch-icon.png'
+          href='/seo/apple-touch-icon.png'
         />
         <link
           rel='icon'
           type='image/png'
           sizes='32x32'
-          href='/favicon-32x32.png'
+          href='/seo/favicon-32x32.png'
         />
         <link
           rel='icon'
           type='image/png'
           sizes='16x16'
-          href='/favicon-16x16.png'
+          href='/seo/favicon-16x16.png'
         />
-        <link rel='icon' href='/favicon.ico' />
-        <link rel='manifest' href='/site.webmanifest' />
+        <link rel='icon' href='/seo/favicon.ico' />
+        <link rel='manifest' href='/seo/site.webmanifest' />
         <link
           rel='icon'
           type='image/png'
           sizes='192x192'
-          href='/android-chrome-192x192.png'
+          href='/seo/android-chrome-192x192.png'
         />
         <link
           rel='icon'
           type='image/png'
           sizes='512x512'
-          href='/android-chrome-512x512.png'
+          href='/seo/android-chrome-512x512.png'
         />
       </head>
       <body
@@ -81,8 +95,8 @@ export default function RootLayout({
       >
         <Providers>
           <RootTemplate key={'root_template'}>
-            <Header />
-            <main className='container max-w-5xl grow'>{children}</main>
+            <Header lng={lng} />
+            <main className='grow'>{children}</main>
             <Footer />
           </RootTemplate>
         </Providers>

@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { Languages } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,27 +15,24 @@ import {
 } from '@/components/ui/tooltip';
 
 import { cn } from '@/lib/utils';
-import { Globe } from 'lucide-react';
-import { useRef } from 'react';
 
-import { useTranslation } from 'react-i18next';
+import Link from 'next/link';
 
-const ChangeLangBtn = () => {
-  const { i18n } = useTranslation();
-  const currentLanguage = i18n.language;
-  const triggerButtonRef = useRef(null);
+import { usePathname } from 'next/navigation';
+import { useTranslation } from '@/app/i18n/client';
 
-  const handleChangeLang = (lang: 'ar' | 'en') => {
-    i18n.changeLanguage(lang);
-  };
+const ChangeLangBtn = ({ lng: currentLanguage }: { lng: string }) => {
+  const { t } = useTranslation(currentLanguage, 'translation');
+  const pathname = usePathname();
+  const pathWithOutLang = pathname.split('/').slice(2).join('/');
 
   return (
-    <Tooltip>
-      <DropdownMenu>
+    <DropdownMenu>
+      <Tooltip>
         <TooltipTrigger asChild>
           <DropdownMenuTrigger asChild>
-            <Button ref={triggerButtonRef} variant='ghost' size='icon'>
-              <Globe className='icon-sm' />
+            <Button data-click-sound={true} variant='ghost' size='icon'>
+              <Languages className='icon-sm' />
             </Button>
           </DropdownMenuTrigger>
         </TooltipTrigger>
@@ -47,9 +45,13 @@ const ChangeLangBtn = () => {
               currentLanguage === 'en' && 'bg-accent'
             )}
           >
-            <button className='w-full' onClick={() => handleChangeLang('en')}>
+            <Link
+              href={`/en/${pathWithOutLang}`}
+              data-click-sound={true}
+              className='w-full'
+            >
               English
-            </button>
+            </Link>
           </DropdownMenuItem>
           <hr className='my-0.5 opacity-0' />
           <DropdownMenuItem
@@ -59,14 +61,18 @@ const ChangeLangBtn = () => {
               currentLanguage === 'ar' && 'bg-accent'
             )}
           >
-            <button className='w-full' onClick={() => handleChangeLang('ar')}>
+            <Link
+              href={`/ar/${pathWithOutLang}`}
+              data-click-sound={true}
+              className='w-full'
+            >
               عربي
-            </button>
+            </Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
-      </DropdownMenu>
-      <TooltipContent>Change Language</TooltipContent>
-    </Tooltip>
+        <TooltipContent>{t('changeLanguage')}</TooltipContent>
+      </Tooltip>
+    </DropdownMenu>
   );
 };
 

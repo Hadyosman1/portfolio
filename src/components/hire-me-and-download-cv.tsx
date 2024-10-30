@@ -1,5 +1,5 @@
 'use client';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from '@/app/i18n/client';
 
 import { ReactEventHandler, type ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
@@ -20,7 +20,8 @@ const ActionButton = ({
 }: IActionButtonProps) => {
   return (
     <Button
-      className={`relative transform overflow-hidden rounded-md px-6 py-3 font-bold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md ${
+      data-click-sound={true}
+      className={`relative transform overflow-hidden rounded-md px-4 py-2 text-xs font-bold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-md sm:px-6 sm:py-3 sm:text-base ${
         primary
           ? 'bg-primary text-primary-foreground hover:bg-primary/90'
           : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
@@ -41,22 +42,22 @@ const ActionButton = ({
   );
 };
 
-export default function HireMeAndDownloadCV() {
-  const { t } = useTranslation();
+export default function HireMeAndDownloadCV({ lng }: { lng: string }) {
+  const { t } = useTranslation(lng, 'translation');
   const handleHireMe = () => {
-    window.location.href = 'mailto:your.email@example.com';
+    // window.location.href = 'mailto:your.email@example.com';
   };
 
   const handleDownloadCV = () => {
-    window.open('/path-to-your-cv.pdf', '_blank');
+    // window.open('/path-to-your-cv.pdf', '_blank');
   };
 
   return (
-    <div className='flex flex-col gap-4 sm:flex-row'>
+    <div className='flex flex-wrap gap-x-3 gap-y-2'>
       <ActionButton
-        onClick={handleHireMe}
-        icon={<ArrowRight size={20} />}
         primary
+        onClick={handleHireMe}
+        icon={<ArrowRight size={20} className='rtl:-rotate-180' />}
       >
         {t('intro.hireMe')}
       </ActionButton>

@@ -4,8 +4,8 @@ import { useEffect, useRef } from 'react';
 import { motion, useAnimationControls, useInView } from 'framer-motion';
 
 const variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
+  hidden: { opacity: 0, scale: 0.7, y: -20 },
+  visible: { opacity: 1, scale: 1, y: 0 }
 };
 
 type Props = {
@@ -26,29 +26,35 @@ const AnimatedText = ({
   const text = Array.isArray(t) ? t : [t];
   const controls = useAnimationControls();
   const eleRef = useRef(null);
-  const isInView = useInView(eleRef, { once });
+  const isInView = useInView(eleRef, { amount: 0.1, once });
 
   useEffect(() => {
     let timeOut: ReturnType<typeof setTimeout>;
+    let innerTimeOut: ReturnType<typeof setTimeout>;
 
     const show = () => {
-      controls.start('visible');
-      timeOut = setTimeout(async () => {
-        await controls.start('hidden');
-         controls.start('visible');
-      }, delay);
+      try {
+        controls.start('visible');
+        if (once) return;
+
+        timeOut = setTimeout(async () => {
+          await controls.start('hidden');
+          innerTimeOut = setTimeout(() => show(), 200);
+        }, delay);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
-    if (isInView) {
-      show();
-    } else {
-      controls.start('hidden');
-    }
+    if (isInView) show();
+    else if (once) controls.start('visible');
+    else controls.start('hidden');
 
     return () => {
+      clearTimeout(innerTimeOut);
       clearTimeout(timeOut);
     };
-  }, [isInView, controls, delay]);
+  }, [isInView, controls, delay, once]);
 
   return (
     <Wrapper className={className}>
@@ -58,9 +64,9 @@ const AnimatedText = ({
         aria-hidden
         variants={{
           hidden: {
-            transition: { staggerDirection: -1, staggerChildren: 0.08 }
+            transition: { staggerChildren: 0.06 }
           },
-          visible: { transition: { staggerChildren: 0.08 } }
+          visible: { transition: { staggerChildren: 0.06 } }
         }}
         initial='hidden'
         animate={controls}
