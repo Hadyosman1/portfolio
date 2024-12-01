@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { motion, useAnimationControls, useInView } from 'framer-motion';
+import { motion, useAnimationControls } from 'framer-motion';
 
 const variants = {
   hidden: { opacity: 0, scale: 0.7, y: -20 },
@@ -26,7 +26,6 @@ const AnimatedText = ({
   const text = Array.isArray(t) ? t : [t];
   const controls = useAnimationControls();
   const eleRef = useRef(null);
-  const isInView = useInView(eleRef, { amount: 0.1, once });
 
   useEffect(() => {
     let timeOut: ReturnType<typeof setTimeout>;
@@ -45,16 +44,15 @@ const AnimatedText = ({
         console.error(error);
       }
     };
-
-    if (isInView) show();
-    else if (once) controls.start('visible');
-    else controls.start('hidden');
+    show();
+    // if (once) controls.start('visible');
+    // else controls.start('hidden');
 
     return () => {
       clearTimeout(innerTimeOut);
       clearTimeout(timeOut);
     };
-  }, [isInView, controls, delay, once]);
+  }, [controls, delay, once]);
 
   return (
     <Wrapper className={className}>
@@ -72,7 +70,7 @@ const AnimatedText = ({
         animate={controls}
       >
         {text.map((line, idx) => (
-          <motion.div className='' key={`${line}-${idx}`}>
+          <motion.div className='mb-2' key={`${line}-${idx}`}>
             {line.split(' ').map((word, idx) => (
               <motion.span
                 className='mx-[4px] whitespace-nowrap'

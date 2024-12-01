@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import useHeader from '@/hooks/useHeader';
 
 import NavLinks from './nav-links';
 import Logo from './logo';
@@ -11,22 +11,7 @@ import ToggleHeader from './toggle-header';
 import { cn } from '@/lib/utils';
 
 const Header = ({ lng }: { lng: string }) => {
-  const [isNavOpen, setIsNavOpen] = useState(false);
-  const toggleNav = useCallback(() => setIsNavOpen(prev => !prev), []);
-  const headerRef = useRef<null | HTMLElement>(null);
-
-  useEffect(() => {
-    const handleHeaderShadow = () => {
-      headerRef.current?.classList.toggle(
-        'header_shadow',
-        isNavOpen || window.scrollY > 60 
-      );
-    };
-    handleHeaderShadow();
-
-    window.addEventListener('scroll', handleHeaderShadow);
-    return () => window.removeEventListener('scroll', handleHeaderShadow);
-  }, [isNavOpen]);
+  const { isNavOpen, toggleNav, headerRef } = useHeader();
 
   return (
     <header
@@ -39,10 +24,11 @@ const Header = ({ lng }: { lng: string }) => {
         </div>
 
         <div
+          data-header-nav={true}
           dir='ltr'
           className={cn(
             isNavOpen
-              ? 'right-0 max-h-[calc(100dvh_-_58px)] flex-col items-end gap-5 border-s border-foreground/40 bg-background/90 px-4 py-4 opacity-100 backdrop-blur-lg sm:static sm:translate-x-0 sm:translate-y-0 sm:flex-row sm:border-s-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none'
+              ? 'right-0 max-h-[calc(100dvh_-_58px)] flex-col items-center gap-5 border-s border-foreground/40 bg-background/90 px-4 py-4 opacity-100 sm:static sm:translate-x-0 sm:translate-y-0 sm:flex-row sm:border-s-0 sm:bg-transparent sm:p-0'
               : 'translate-x-[100vw] overflow-y-auto opacity-0 sm:translate-x-0 sm:translate-y-0 sm:flex-row sm:overflow-visible sm:opacity-100',
             'fixed bottom-0 flex h-[calc(100dvh_-_58px)] w-[80vw] grow translate-y-full sm:static sm:h-auto sm:w-auto'
           )}

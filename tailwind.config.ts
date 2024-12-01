@@ -17,6 +17,10 @@ const config: Config = {
       }
     },
     extend: {
+      screens: {
+        xs: '450px'
+      },
+
       container: {
         padding: {
           DEFAULT: '1rem',
@@ -29,7 +33,7 @@ const config: Config = {
       fontFamily: {
         geist: ['var(--font-geist-sans)', 'sans-serif'],
         geistMono: ['var(--font-geist-mono)', 'monospace'],
-        kalam: ['var(--font-kalam)', 'cursive']
+        cairo: ['var(--font-cairo)', 'sans-serif']
       },
       colors: {
         background: 'hsl(var(--background))',

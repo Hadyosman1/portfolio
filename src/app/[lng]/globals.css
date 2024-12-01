@@ -7,7 +7,7 @@ html {
 }
 
 html[lang='ar'][dir='rtl'] body {
-  font-family: var(--font-noto-sans-arabic);
+  font-family: var(--font-cairo);
 }
 
 body {
@@ -50,12 +50,12 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
 
-    --component-name-color: hsl(202 76% 55%);
+    --component-name-color: hsl(var(--active-link));
 
     /* Skills */
-    --skills-section-shadow: hsl(var(--background) / 0.8);
+    --skills-section-shadow: hsl(var(--background) / 0.6);
     --skills-bg: #f4f6f6;
-    --skills-box-bg: #f2f2f2;
+    --skills-box-bg: #fef9f2;
     /* Skills */
   }
 
@@ -107,23 +107,6 @@ body {
 @layer components {
   .header_shadow {
     @apply shadow-sm shadow-muted-foreground/40;
-  }
-
-  .links_wrapper_border::after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: calc(100% - 6px);
-    bottom: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: hsl(var(--foreground));
-    opacity: 0;
-  }
-  @media (min-width: theme('screens.sm')) {
-    .links_wrapper_border::after {
-      opacity: 0.5;
-    }
   }
 
   .my_picture_wrapper::after {
@@ -230,12 +213,12 @@ body {
 
   .skill_box {
     position: relative;
-    display: flex;
+    width: 68px;
     aspect-ratio: 1;
+    display: flex;
     align-items: center;
     justify-content: center;
     background: var(--skills-box-bg);
-    width: 56px;
     border-radius: 12px;
     flex-shrink: 0;
     @apply border border-muted-foreground/15 p-3 sm:w-24 sm:p-6;
@@ -251,7 +234,7 @@ body {
         transition: all 300ms;
         position: absolute;
         padding: 6px;
-        backdrop-filter: blur(4px);
+        backdrop-filter: blur(3px);
         opacity: 0;
         inset: 0;
         display: flex;
@@ -262,12 +245,12 @@ body {
         transform: translateY(100%) scaleY(0);
         font-size: 8px;
         text-align: center;
-        @apply bg-background/85 font-medium animate-out sm:text-sm;
+        @apply bg-background/75 font-medium animate-out sm:text-sm;
       }
 
       &:hover .skill_name {
-        transform: translateY(0) scaleY(100%);
-        opacity: 100%;
+        transform: translateY(0) scaleY(1);
+        opacity: 1;
       }
     }
 
@@ -319,4 +302,22 @@ body {
   .container-md {
     @apply container max-w-5xl;
   }
+
+  .skill-intro-animation {
+    transition: 0.3s;
+    animation: skill-intro 1.2s ease-in infinite alternate;
+  }
+
+  /* key frames */
+  @keyframes skill-intro {
+    0% {
+      scale: 1;
+      translate: 0 -50%;
+    }
+    100% {
+      scale: 1.1;
+      translate: 0;
+    }
+  }
+  /* key frames */
 }

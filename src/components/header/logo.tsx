@@ -4,11 +4,11 @@ const Logo = ({ lng }: { lng: string }) => {
   return (
     <Link
       data-click-sound={true}
-      className='border-b border-accent-foreground font-kalam text-2xl font-bold'
+      className='text-3xl font-bold'
       href={`/${lng}#intro-section`}
     >
-      <span className='pointer-events-none  relative inline-block ltr:-rotate-12 ltr:[letter-spacing:-2px]'>
-        Hady
+      <span className='pointer-events-none relative inline-block border-b border-b-accent-foreground italic ltr:-rotate-12'>
+        H
       </span>
     </Link>
   );

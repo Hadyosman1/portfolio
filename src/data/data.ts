@@ -2,7 +2,7 @@
 
 import HtmlIcon from '@/components/icons/logos/htmlIcon';
 import CssIcon from '@/components/icons/logos/cssIcon';
-import jsIcon from '@/components/icons/logos/jsIcon';
+import JsIcon from '@/components/icons/logos/jsIcon';
 import ReactIcon from '@/components/icons/logos/reactIcon';
 import NextJsIcon from '@/components/icons/logos/nextJsIcon';
 import TypeScriptIcon from '@/components/icons/logos/typeScriptIcon';
@@ -19,15 +19,15 @@ export const skills = [
   { name: 'CSS', icon: CssIcon, color: '#2965f1' },
   { name: 'HTML', icon: HtmlIcon, color: '#f06529' },
   { name: 'Next.js', icon: NextJsIcon, color: '#9aaaca' },
-  { name: 'JavaScript', icon: jsIcon, color: '#f3dc1f' },
+  { name: 'JavaScript', icon: JsIcon, color: '#f3dc1f' },
   { name: 'React', icon: ReactIcon, color: '#7ccfff' },
-  { name: 'Redux', icon: ReduxIcon, color: '#8a63d2' },
-  { name: 'Bootstrap', icon: BootstrapIcon, color: '#7952b3' },
   { name: 'Tailwind CSS', icon: TailwindCssIcon, color: '#4fd1c5' },
-  { name: 'React Router', icon: ReactRouterIcon, color: '#f44250' },
   { name: 'TypeScript', icon: TypeScriptIcon, color: '#4c9ed7' },
+  { name: 'Redux', icon: ReduxIcon, color: '#8a63d2' },
+  { name: 'Git', icon: GitIcon, color: '#f05033' },
+  { name: 'Bootstrap', icon: BootstrapIcon, color: '#7952b3' },
+  { name: 'React Router', icon: ReactRouterIcon, color: '#f44250' },
   { name: 'Vite', icon: ViteIcon, color: '#bd34fe' },
   { name: 'Node.js', icon: NodeJsIcon, color: '#3f8b3d' },
-  { name: 'Git', icon: GitIcon, color: '#f05033' },
   { name: 'Github', icon: GithubIcon, color: '#76887899' }
 ];

@@ -54,9 +54,9 @@ const NavLinks = ({
           <MotionButton
             asChild
             variant={'ghost'}
-            size={'sm'}
+            size={'default'}
             className={cn(
-              'w-full transform-gpu font-semibold transition-all sm:w-auto',
+              'w-full transform-gpu text-sm font-semibold transition-all sm:w-auto',
               isLinkActive(href) && 'hover:bg-transparent',
               'relative z-[1] underline-offset-2 hover:underline'
             )}

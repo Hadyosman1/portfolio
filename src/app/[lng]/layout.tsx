@@ -1,5 +1,5 @@
 import localFont from 'next/font/local';
-import { Kalam, Noto_Sans_Arabic } from 'next/font/google';
+import { Cairo } from 'next/font/google';
 
 import './globals.css';
 
@@ -23,15 +23,9 @@ const geistMono = localFont({
   variable: '--font-geist-mono',
   weight: '100 900'
 });
-const kalam = Kalam({
-  subsets: ['latin'],
-  weight: ['300', '400', '700'],
-  variable: '--font-kalam'
-});
-const noto_Sans_Arabic = Noto_Sans_Arabic({
+const cairo = Cairo({
   subsets: ['arabic'],
-  variable: '--font-noto-sans-arabic',
-  weight: ['300', '400', '500', '600', '700', '800', '900']
+  variable: '--font-cairo'
 });
 
 export async function generateStaticParams() {
@@ -89,8 +83,7 @@ export default function RootLayout({
           'flex min-h-svh flex-col antialiased',
           geistSans.variable,
           geistMono.variable,
-          kalam.variable,
-          noto_Sans_Arabic.variable
+          cairo.variable
         )}
       >
         <Providers>

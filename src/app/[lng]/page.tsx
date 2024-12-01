@@ -12,7 +12,7 @@ export default function Home({ params: { lng } }: { params: { lng: string } }) {
       <Intro lng={lng} />
       <About lng={lng} />
       <Projects lng={lng} />
-      <Skills />
+      <Skills lng={lng} />
       <Contact lng={lng} />
     </div>
   );
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     default: 'Hady Osman | Portfolio',
     template: '%s | Portfolio'
   },
-  description: "Hady's Portfolio",
+  description:
+    "Hello, I'm Hady Osman ,I'm a Frontend Developer. \nI specialize in building innovative, scalable, and maintainable web applications using cutting-edge technologies.",
   keywords: ['Hady Osman', 'Portfolio', 'Web Developer', 'Frontend Developer']
 };

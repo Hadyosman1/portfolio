@@ -14,6 +14,7 @@ const animationVariants = {
 };
 
 import { skills } from '@/data/data';
+import { useTranslation } from '@/app/i18n/client';
 const ROW_ELEMENTS_COUNT = 14;
 
 const skillsMergedWithEmptyBlocks = (isMobile: boolean = false) => {
@@ -39,7 +40,8 @@ const skillsMergedWithEmptyBlocks = (isMobile: boolean = false) => {
   return rows;
 };
 
-const Skills = () => {
+const Skills = ({ lng }: { lng: string }) => {
+  const { t } = useTranslation(lng, 'translation');
   const [skillsRows, setSkillsRows] = useState(skillsMergedWithEmptyBlocks());
 
   const controls = useAnimationControls();
@@ -78,22 +80,21 @@ const Skills = () => {
       id='skills-section'
       className='home_section mx-auto flex w-full max-w-[1440px] flex-col gap-4 overflow-x-hidden'
     >
-      <h2 className='section_heading with_wave_line_1_bottom mx-auto'>
+      <h2  className='section_heading mx-auto'>
         {'<'}
-        <span className='component_name'>Skills</span>
+        <span className='component_name'>{t('skills')}</span>
         {' />'}
       </h2>
 
       <motion.div
+        dir='rtl'
         ref={skillsContainerRef}
         variants={animationVariants}
-        className='skills_container_overlay skills_container_bg flex grow flex-col justify-center gap-2 sm:gap-4'
+        className='skills_container_overlay skills_container_bg flex grow flex-col justify-center gap-2 max-sm:pl-5 sm:gap-4'
       >
         {skillsRows.map((row, idx) => (
           <motion.div
-            style={{
-              transform: `translateX(${idx * 1.5}vw)`
-            }}
+            style={{ transform: `translateX(-${idx * 1.5}vw)` }}
             className={'flex justify-center gap-2 sm:gap-4'}
             key={`row-${idx}`}
           >
@@ -122,9 +123,7 @@ const Skills = () => {
                 >
                   <Icon
                     className='h-9 w-9 sm:h-12 sm:w-12'
-                    style={{
-                      filter: `drop-shadow(0 0 0.6rem ${color})`
-                    }}
+                    style={{ filter: `drop-shadow(0 0 0.6rem ${color})` }}
                   />
                   <div style={{ color }} className='skill_name'>
                     {name}

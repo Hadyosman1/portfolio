@@ -1,23 +1,20 @@
 'use client';
 
-import Image from 'next/image';
 import { useTranslation } from '@/app/i18n/client';
 
 import AnimatedText from '../../ui/animated-text';
 import HireMeAndDownloadCV from '@/components/hire-me-and-download-cv';
 
-import myImage from '@/../../public/images/me.png';
-import glow_circle from '@/../../public/images/shapes/glow_circle.svg';
-
 import { motion } from 'framer-motion';
+import MyPicture from './MyPicture';
 
 const Intro = ({ lng }: { lng: string }) => {
   const { t, i18n } = useTranslation(lng, 'translation');
   const currentLanguage = i18n.resolvedLanguage;
 
   return (
-    <section id='intro-section overflow-x-hidden'>
-      <div className='home_section container-md flex h-full flex-col items-center gap-9 py-10 md:flex-row'>
+    <section id='intro-section'>
+      <div className='home_section container-md flex h-full flex-col items-center max-md:gap-20 gap-9 py-10 md:flex-row'>
         <div className='grow'>
           <div className=''>
             {currentLanguage === 'ar' ? (
@@ -56,7 +53,7 @@ const Intro = ({ lng }: { lng: string }) => {
               initial={{ opacity: 0, x: 250, y: 250, rotate: 80 }}
               animate={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
               transition={{ duration: 1 }}
-              className='mt-3 max-w-[570px] text-balance text-center text-lg font-medium text-muted-foreground md:text-start md:text-xl'
+              className='mt-4 max-w-[570px] text-balance text-center text-lg font-medium text-muted-foreground md:text-start md:text-xl'
             >
               {t('intro.description')}
             </motion.h2>
@@ -76,26 +73,7 @@ const Intro = ({ lng }: { lng: string }) => {
           </motion.div>
         </div>
 
-        <div className='my_picture_wrapper relative max-w-[360px] shrink overflow-x-clip selection:bg-transparent'>
-          <Image
-            priority
-            unoptimized
-            className='h-auto w-full brightness-90'
-            width={360}
-            height={0}
-            src={myImage}
-            alt='Hady Osman'
-          />
-
-          <Image
-            fill
-            priority
-            sizes='(min-width: 0px) 360px'
-            className='absolute inset-0 z-[-1] h-full w-full translate-y-8 scale-105'
-            src={glow_circle}
-            alt='shape'
-          />
-        </div>
+        <MyPicture />
       </div>
     </section>
   );
