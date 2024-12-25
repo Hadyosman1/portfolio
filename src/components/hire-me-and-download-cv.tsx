@@ -1,7 +1,7 @@
 'use client';
-import { useTranslation } from '@/app/i18n/client';
 
 import { ReactEventHandler, type ReactNode } from 'react';
+import { useTranslation } from '@/app/i18n/client';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Download } from 'lucide-react';
 
@@ -59,10 +59,10 @@ export default function HireMeAndDownloadCV({ lng }: { lng: string }) {
         onClick={handleHireMe}
         icon={<ArrowRight size={20} className='rtl:-rotate-180' />}
       >
-        {t('intro.hireMe')}
+        {t('introSection.hireMe')}
       </ActionButton>
       <ActionButton onClick={handleDownloadCV} icon={<Download size={20} />}>
-        {t('intro.downloadCv')}
+        {t('introSection.downloadCv')}
       </ActionButton>
     </div>
   );

@@ -16,7 +16,7 @@ const useSpyScroll = (containerSelector: string = 'body') => {
           if (entry.isIntersecting) {
             timeOut = setTimeout(() => {
               setPathWithHash(`${pathname}#${entry.target.id}`);
-            }, 300);
+            }, 250);
           }
         });
       },

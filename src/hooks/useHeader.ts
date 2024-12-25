@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
@@ -14,24 +14,11 @@ const useHeader = () => {
     );
   }, [isNavOpen]);
 
-  const handleHeaderClose = useCallback(
-    (e: Event) => {
-      const target = e.target as HTMLElement;
-      if (isNavOpen && !target.dataset.headerNav) setIsNavOpen(false);
-    },
-    [isNavOpen]
-  );
-
   useEffect(() => {
     handleHeaderShadow();
     window.addEventListener('scroll', handleHeaderShadow);
     return () => window.removeEventListener('scroll', handleHeaderShadow);
   }, [handleHeaderShadow]);
-
-  useEffect(() => {
-    document.addEventListener('click', handleHeaderClose);
-    return () => document.removeEventListener('click', handleHeaderClose);
-  }, [isNavOpen, handleHeaderClose]);
 
   return {
     isNavOpen,

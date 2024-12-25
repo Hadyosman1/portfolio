@@ -12,6 +12,7 @@ import Footer from '@/components/footer';
 import RootTemplate from '@/app/[lng]/template';
 
 import { cn } from '@/lib/utils';
+import ScrollToTopBtn from '@/components/scroll-to-top-btn';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -63,7 +64,6 @@ export default function RootLayout({
           sizes='16x16'
           href='/seo/favicon-16x16.png'
         />
-        <link rel='icon' href='/seo/favicon.ico' />
         <link rel='manifest' href='/seo/site.webmanifest' />
         <link
           rel='icon'
@@ -91,6 +91,7 @@ export default function RootLayout({
             <Header lng={lng} />
             <main className='grow'>{children}</main>
             <Footer />
+            <ScrollToTopBtn />
           </RootTemplate>
         </Providers>
       </body>

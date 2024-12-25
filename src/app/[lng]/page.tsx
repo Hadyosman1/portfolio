@@ -24,6 +24,6 @@ export const metadata: Metadata = {
     template: '%s | Portfolio'
   },
   description:
-    "Hello, I'm Hady Osman ,I'm a Frontend Developer. \nI specialize in building innovative, scalable, and maintainable web applications using cutting-edge technologies.",
+    "Hello, I'm Hady Osman, A Frontend Developer. \nI specialize in building innovative, scalable, and maintainable web applications using cutting-edge technologies.",
   keywords: ['Hady Osman', 'Portfolio', 'Web Developer', 'Frontend Developer']
 };

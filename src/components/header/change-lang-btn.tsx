@@ -31,8 +31,8 @@ const ChangeLangBtn = ({ lng: currentLanguage }: { lng: string }) => {
       <Tooltip>
         <TooltipTrigger asChild>
           <DropdownMenuTrigger asChild>
-            <Button data-click-sound={true} variant='ghost' size='icon'>
-              <Languages className='icon-sm' />
+            <Button variant='ghost' size='icon'>
+              <Languages data-click-sound={true} className='icon-sm' />
             </Button>
           </DropdownMenuTrigger>
         </TooltipTrigger>

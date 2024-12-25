@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 import myImage from '@/../../public/images/me.png';
 import glow_circle from '@/../../public/images/shapes/glow_circle.svg';
+
+// icons
 import CssIcon from '@/components/icons/logos/cssIcon';
 import HtmlIcon from '@/components/icons/logos/htmlIcon';
 import NextJsIcon from '@/components/icons/logos/nextJsIcon';
@@ -16,7 +18,7 @@ import GithubIcon from '@/components/icons/logos/githubIcon';
 
 const MyPicture = () => {
   return (
-    <div className='my_picture_wrapper relative max-w-[360px] shrink scale-[0.8] selection:bg-transparent max-sm:scale-[0.65]'>
+    <div className='my_picture_wrapper relative max-w-[360px] shrink scale-[0.75] selection:bg-transparent max-xs:scale-[0.70] xl:scale-90'>
       <Image
         priority
         unoptimized
@@ -25,6 +27,7 @@ const MyPicture = () => {
         height={0}
         src={myImage}
         alt='Hady Osman'
+        
       />
 
       <Image
@@ -79,9 +82,9 @@ const MyPicture = () => {
       />
 
       <ReactIcon
-        className='skill-intro-animation absolute z-10 size-11 -translate-y-full'
+        className='skill-intro-animation absolute z-10 size-11 -translate-y-full [@media(max-width:360px)]:hidden'
         style={{
-          insetInlineStart: '165px',
+          insetInlineStart: '158px',
           animationDelay: '0.6s',
           bottom: '395px',
           filter: `drop-shadow( 0px 0px 10px #7ccfff)`
@@ -91,7 +94,7 @@ const MyPicture = () => {
       <ReduxIcon
         className='skill-intro-animation absolute z-10 size-10 -translate-y-full'
         style={{
-          insetInlineEnd: '72px',
+          insetInlineEnd: '80px',
           animationDelay: '0.7s',
           bottom: '375px',
           filter: `drop-shadow( 0px 0px 10px #8a63d2)`

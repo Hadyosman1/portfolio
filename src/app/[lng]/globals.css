@@ -10,15 +10,14 @@ html[lang='ar'][dir='rtl'] body {
   font-family: var(--font-cairo);
 }
 
-body {
+html[lang='ar'][dir='rtl']
+  body
+  :is(section, div, main, article):not([dir='rtl']) {
   font-family: var(--font-geist-sans), sans-serif;
-  /* background-image: url('./../../public/images/shapes/noise_bg.svg'); */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+body {
+  font-family: var(--font-geist-sans), sans-serif;
 }
 
 @layer base {
@@ -104,9 +103,41 @@ body {
   }
 }
 
-@layer components {
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
   .header_shadow {
     @apply shadow-sm shadow-muted-foreground/40;
+  }
+
+  #intro-section {
+    position: relative;
+    z-index: 2;
+  }
+
+  #intro-section::before {
+    content: '';
+    position: absolute;
+    clip-path: polygon(9% 15%, 36% 14%, 39% 50%, 42% 88%, 26% 64%, 22% 34%);
+    left: 10%;
+    top: 5%;
+    width: 60%;
+    height: 60%;
+    background-color: hsl(var(--active-link));
+    filter: drop-shadow(0 0 350px hsl(var(--active-link)));
+    z-index: -2;
+    animation: intro-shape 8s infinite alternate;
+  }
+
+  #intro-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: hsl(var(--background) / 0.4);
+    backdrop-filter: blur(50px);
+    z-index: -1;
   }
 
   .my_picture_wrapper::after {
@@ -177,7 +208,7 @@ body {
   }
 
   .home_section {
-    @apply py-3 sm:min-h-[calc(100svh_-_68px)];
+    @apply py-4;
   }
 
   .section_heading {
@@ -264,9 +295,7 @@ body {
       }
     }
   }
-}
 
-@layer utilities {
   /** Icons Sizes **/
   .icon-xs {
     width: 16px;
@@ -304,11 +333,24 @@ body {
   }
 
   .skill-intro-animation {
+    will-change: translate;
     transition: 0.3s;
     animation: skill-intro 1.2s ease-in infinite alternate;
   }
 
   /* key frames */
+  @keyframes intro-shape {
+    35% {
+      clip-path: polygon(1% 29%, 36% 14%, 39% 50%, 42% 88%, 26% 64%, 9% 56%);
+    }
+    65% {
+      clip-path: polygon(59% 33%, 36% 14%, 39% 50%, 42% 88%, 26% 64%, 9% 56%);
+    }
+    100% {
+      clip-path: polygon(20% 40%, 20% 14%, 25% 50%, 42% 88%, 50% 64%, 12% 70%);
+    }
+  }
+
   @keyframes skill-intro {
     0% {
       scale: 1;

@@ -43,6 +43,7 @@ const Socials = ({ className, lng }: { className?: string; lng: string }) => {
                 target='_blank'
                 href={href}
               >
+                <span className='sr-only'>{label}</span>
                 {icon}
               </a>
             </Button>

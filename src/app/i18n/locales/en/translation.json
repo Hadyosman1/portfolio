@@ -13,13 +13,16 @@
     "linkedin": "LinkedIn",
     "github": "Github"
   },
-  "intro": {
+  "introSection": {
     "heading": {
       "line1": "Hello, I'm Hady Osman",
-      "line2": "I'm a Frontend Developer."
+      "line2": "a Frontend Developer."
     },
-    "description": "I specialize in building innovative, scalable, and maintainable web applications using cutting-edge technologies.",
+    "description": "I specialize in creating user-friendly digital experiences that work seamlessly across devices. I turn ideas into polished, interactive websites, focusing on both aesthetics and functionality to deliver value and meet the unique goals of each project.",
     "hireMe": "Hire Me",
     "downloadCv": "Download CV"
+  },
+  "aboutSection": {
+    "description": "I specialize in crafting dynamic, responsive, and user-friendly web interfaces using modern technologies. With a strong foundation in HTML, CSS, and JavaScript, and hands-on experience with frameworks like React and Next.js, I aim to deliver scalable and maintainable solutions tailored to clients' needs. My goal is to turn ideas into reality by creating visually appealing and highly functional web applications that enhance user experiences. Whether collaborating with teams or working independently, I prioritize clean code and innovative designs."
   }
 }

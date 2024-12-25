@@ -34,6 +34,7 @@ const ThemeToggle = ({ lng }: { lng: string }) => {
             setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
           }}
         >
+          <span className='sr-only'>{t('toggleTheme')}</span>
           {resolvedTheme === 'dark' ? (
             <SunIcon className='icon-sm' />
           ) : (
@@ -41,7 +42,7 @@ const ThemeToggle = ({ lng }: { lng: string }) => {
           )}
         </Button>
       </TooltipTrigger>
-      <TooltipContent>{t("toggleTheme")}</TooltipContent>
+      <TooltipContent>{t('toggleTheme')}</TooltipContent>
     </Tooltip>
   );
 };

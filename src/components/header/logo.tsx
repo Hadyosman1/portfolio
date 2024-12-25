@@ -1,15 +1,15 @@
 import Link from 'next/link';
+import { DevHead } from '../icons/devHead';
 
 const Logo = ({ lng }: { lng: string }) => {
   return (
     <Link
       data-click-sound={true}
-      className='text-3xl font-bold'
+      className='block w-fit'
       href={`/${lng}#intro-section`}
     >
-      <span className='pointer-events-none relative inline-block border-b border-b-accent-foreground italic ltr:-rotate-12'>
-        H
-      </span>
+      <DevHead className='size-10 pointer-events-none' />
+      <span className='sr-only'>Hady Osman</span>
     </Link>
   );
 };
