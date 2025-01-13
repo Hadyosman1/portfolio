@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 import tailwindCssAnimate from "tailwindcss-animate";
+import tailwindCssTypography from "@tailwindcss/typography";
 
 export default {
   darkMode: ["class"],
@@ -30,6 +31,7 @@ export default {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "active-link": "hsl(var(--active-link-color))",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -76,5 +78,5 @@ export default {
       },
     },
   },
-  plugins: [tailwindCssAnimate],
+  plugins: [tailwindCssAnimate, tailwindCssTypography],
 } satisfies Config;

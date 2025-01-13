@@ -11,7 +11,7 @@ const Intro = () => {
             {"Hello, I'm Hady Osman"}
             <br />a Frontend Developer.
           </h1>
-          <p className="text-muted-foreground mt-6 max-w-[480px] text-balance text-center text-base font-medium lg:text-start lg:text-lg">
+          <p className="mt-6 max-w-[480px] text-balance text-center text-base font-medium text-muted-foreground lg:text-start lg:text-lg">
             I specialize in creating user-friendly digital experiences that work
             seamlessly across devices. I turn ideas into polished, interactive
             websites, focusing on both aesthetics and functionality to deliver
@@ -32,7 +32,7 @@ const Intro = () => {
 export default Intro;
 
 import myImage from "@/assets/me.png";
-import glow_circle from "@/assets/shapes/glow_circle.svg";
+import glow_circle from "@/../public/shapes/glow_circle.svg";
 
 // icons
 import CssIcon from "@/assets/icons/cssIcon";
@@ -49,7 +49,7 @@ import GithubIcon from "@/assets/icons/githubIcon";
 
 const MyPicture = () => {
   return (
-    <div className="my-picture-wrapper max-xs:scale-[0.70] relative max-w-[360px] shrink scale-[0.75] selection:bg-transparent lg:my-28 xl:scale-90">
+    <div className="my-picture-wrapper relative max-w-[360px] shrink scale-[0.75] selection:bg-transparent max-xs:scale-[0.70] lg:my-28 xl:scale-90">
       <Image
         priority
         unoptimized

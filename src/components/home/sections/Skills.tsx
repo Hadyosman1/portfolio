@@ -1,5 +1,6 @@
 "use client";
 
+import SectionHeading from "@/components/SectionHeading";
 import useSkills from "@/hooks/skills";
 
 const Skills = () => {
@@ -10,9 +11,7 @@ const Skills = () => {
       id="skills"
       className="mx-auto flex w-full max-w-[1440px] flex-col gap-4 overflow-x-hidden"
     >
-      <h2 className="pb-6 text-center text-3xl font-extrabold md:text-4xl">
-        Skills
-      </h2>
+      <SectionHeading>Skills</SectionHeading>
 
       <div className="skills-container-overlay skills-container-bg flex grow flex-col justify-center gap-2 max-sm:pl-5 sm:gap-4">
         {skillsRows.map((row, idx) => (

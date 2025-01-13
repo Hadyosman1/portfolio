@@ -4,6 +4,8 @@
 
 html {
   @apply scroll-pt-[70px] scroll-smooth;
+  scrollbar-color: hsl(var(--intro-shape-color)) hsl(var(--background));
+  scrollbar-width: thin;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -44,6 +46,8 @@ body {
     /* Skills */
 
     --intro-shape-color: 207 90% 54%;
+
+    --active-link-color: 200 90% 54%;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -76,6 +80,10 @@ body {
     --skills-bg: #141414;
     --skills-box-bg: #0a0a0c;
     /* Skills */
+
+    [data-rmiz-modal-overlay="visible"] {
+      background-color: hsl(var(--background));
+    }
   }
 }
 
@@ -88,8 +96,9 @@ body {
   }
 }
 
+/* todo: remove this 👇 */
 main > section {
-  min-height: 100svh;
+  /* min-height: 100svh; */
 }
 
 @layer components {
@@ -185,7 +194,7 @@ main > section {
     background: var(--skills-box-bg);
     border-radius: 12px;
     flex-shrink: 0;
-    @apply border-muted-foreground/15 border p-3 sm:w-24 sm:p-6;
+    @apply border border-muted-foreground/15 p-3 sm:w-24 sm:p-6;
 
     &:hover {
       transition: all 500ms ease-in-out;
@@ -209,7 +218,7 @@ main > section {
         transform: translateY(100%) scaleY(0);
         font-size: 8px;
         text-align: center;
-        @apply bg-background/75 animate-out font-medium sm:text-sm;
+        @apply bg-background/75 font-medium animate-out sm:text-sm;
       }
 
       &:hover .skill-name {
@@ -236,9 +245,8 @@ main > section {
   }
 
   .skill-intro-animation {
-    will-change: translate;
-    transition: 0.3s;
-    animation: skill-intro 1.2s ease-in infinite alternate;
+    transition: all 0.3s;
+    animation: skill-intro 1.2s 0.3s ease-in infinite alternate;
   }
 
   /* key frames */
