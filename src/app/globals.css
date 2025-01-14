@@ -4,7 +4,7 @@
 
 html {
   @apply scroll-pt-[70px] scroll-smooth;
-  scrollbar-color: hsl(var(--intro-shape-color)) hsl(var(--background));
+  scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
   scrollbar-width: thin;
 }
 body {
