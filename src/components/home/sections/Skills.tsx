@@ -11,7 +11,7 @@ const Skills = () => {
       id="skills"
       className="mx-auto flex w-full max-w-[1440px] flex-col gap-4 overflow-x-hidden"
     >
-      <SectionHeading>Skills</SectionHeading>
+      <SectionHeading title="Skills" />
 
       <div className="skills-container-overlay skills-container-bg flex grow flex-col justify-center gap-2 max-sm:pl-5 sm:gap-4">
         {skillsRows.map((row, idx) => (

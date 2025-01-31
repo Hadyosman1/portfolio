@@ -4,9 +4,10 @@
 
 html {
   @apply scroll-pt-[70px] scroll-smooth;
-  scrollbar-color: hsl(var(--foreground)) hsl(var(--background));
+  scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--background));
   scrollbar-width: thin;
 }
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -40,9 +41,9 @@ body {
     --radius: 0.5rem;
 
     /* Skills */
-    --skills-section-shadow: hsl(var(--background) / 0.6);
-    --skills-bg: #f4f6f6;
-    --skills-box-bg: #fef9f2;
+    --skills-section-shadow: hsl(var(--background) / 0.9);
+    --skills-bg: hsl(var(--border) / 0.3);
+    --skills-box-bg: #f6f6f6;
     /* Skills */
 
     --intro-shape-color: 207 90% 54%;
@@ -94,11 +95,6 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-/* todo: remove this 👇 */
-main > section {
-  /* min-height: 100svh; */
 }
 
 @layer components {
@@ -194,7 +190,7 @@ main > section {
     background: var(--skills-box-bg);
     border-radius: 12px;
     flex-shrink: 0;
-    @apply border border-muted-foreground/15 p-3 sm:w-24 sm:p-6;
+    @apply p-3 shadow-lg shadow-border/30 ring-1 ring-border/50 sm:w-24 sm:p-6;
 
     &:hover {
       transition: all 500ms ease-in-out;
@@ -229,11 +225,11 @@ main > section {
 
     &.empty {
       filter: brightness(101%);
-      transition: all 1.2s ease-in;
+      transition: all 1.2s ease-out;
 
       &:hover {
-        scale: 0.75;
-        transition: all 0.3s ease-in;
+        scale: 0.85;
+        transition: all 0.3s ease-out;
       }
     }
   }
@@ -244,16 +240,72 @@ main > section {
     @apply max-w-5xl;
   }
 
+  .bg-noise {
+    position: relative;
+
+    &::before {
+      content: "";
+      background: hsl(var(--secondary) / 0.04)
+        url("./../../public/shapes/noise_bg.svg") 100% 100%;
+      filter: invert(250%);
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+  }
+
+  :is(.dark) .bg-noise {
+    &::before {
+      filter: invert(0%);
+    }
+  }
+
+  .card {
+    position: relative;
+
+    .hover-animated-border {
+      background: hsl(var(--secondary) / 0.2);
+      position: absolute;
+      overflow: hidden;
+      inset: -3px;
+      z-index: -1;
+      border-radius: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: blur(4px);
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 30%;
+        height: 150%;
+        background: hsl(var(--active-link-color) / 0.5);
+        box-shadow: 0 0 50px hsl(var(--active-link-color));
+        opacity: 0;
+        transition: all 0.3s;
+        rotate: 45deg;
+        animation: hover-animated-border 9s infinite linear;
+      }
+    }
+
+    &:hover .hover-animated-border::before {
+      opacity: 1;
+    }
+  }
+
   .skill-intro-animation {
+    scale: 1.1;
+    translate: 0 -30%;
     transition: all 0.3s;
-    animation: skill-intro 1.2s 0.3s ease-in infinite alternate;
+    animation: skill-intro 1.2s 0.3s ease-out infinite alternate;
   }
 
   /* key frames */
   @keyframes skill-intro {
-    0% {
+    30% {
       scale: 1;
-      translate: 0 -50%;
+      translate: 0 -30%;
     }
     100% {
       scale: 1.1;
@@ -270,6 +322,12 @@ main > section {
     }
     100% {
       clip-path: polygon(20% 40%, 20% 14%, 25% 50%, 42% 88%, 50% 64%, 12% 70%);
+    }
+  }
+
+  @keyframes hover-animated-border {
+    to {
+      rotate: calc(45deg + 360deg);
     }
   }
   /* key frames */

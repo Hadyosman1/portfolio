@@ -22,7 +22,6 @@ const Intro = () => {
             <DownloadCvButton />
           </div>
         </div>
-
         <MyPicture />
       </div>
     </section>
@@ -31,21 +30,23 @@ const Intro = () => {
 
 export default Intro;
 
-import myImage from "@/assets/me.png";
+import myImage from "@/../public/me.png";
 import glow_circle from "@/../public/shapes/glow_circle.svg";
 
 // icons
-import CssIcon from "@/assets/icons/cssIcon";
-import HtmlIcon from "@/assets/icons/htmlIcon";
-import NextJsIcon from "@/assets/icons/nextJsIcon";
-import JsIcon from "@/assets/icons/jsIcon";
-import ReactIcon from "@/assets/icons/reactIcon";
-import TypeScriptIcon from "@/assets/icons/typeScriptIcon";
-import ReduxIcon from "@/assets/icons/reduxIcon";
-import TailwindCssIcon from "@/assets/icons/tailwindcss";
-import BootstrapIcon from "@/assets/icons/bootstrapIcon";
-import GitIcon from "@/assets/icons/gitIcon";
-import GithubIcon from "@/assets/icons/githubIcon";
+import {
+  CssIcon,
+  HtmlIcon,
+  NextJsIcon,
+  JavaScriptIcon,
+  ReactIcon,
+  TypeScriptIcon,
+  ReduxIcon,
+  TailwindCssIcon,
+  BootstrapIcon,
+  GitIcon,
+  GithubIcon,
+} from "@/assets";
 
 const MyPicture = () => {
   return (
@@ -83,7 +84,7 @@ const MyPicture = () => {
         }}
       />
 
-      <JsIcon
+      <JavaScriptIcon
         className="skill-intro-animation absolute -start-4 z-10 size-11 -translate-y-full"
         style={{
           bottom: "240px",

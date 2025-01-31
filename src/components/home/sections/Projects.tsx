@@ -5,9 +5,9 @@ import { projects } from "@/data/projects";
 const Projects = () => {
   return (
     <section id="projects" className="container">
-      <SectionHeading>Projects</SectionHeading>
+      <SectionHeading title="Projects" />
 
-      <ul className="grid grid-cols-1 gap-3 py-6 md:grid-cols-2 md:py-16">
+      <ul className="grid grid-cols-1 gap-3 py-6 md:grid-cols-2 md:py-8">
         {projects.map((project, idx) => (
           <li key={project.slug}>
             <ProjectCard priority={idx <= 4} project={project} />

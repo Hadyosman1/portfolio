@@ -28,7 +28,7 @@ const NavLinks = ({ className, closeMenu }: NavLinksProps) => {
           size="sm"
           variant="ghost"
           className={cn(
-            "text-[14px] font-medium",
+            "text-[14px] font-medium transition-[box-shadow_300ms,color_300ms]",
             activeHref === href &&
               "text-active-link ring-[1px] ring-active-link hover:text-active-link",
           )}

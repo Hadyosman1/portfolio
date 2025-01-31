@@ -6,8 +6,9 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 const About = () => {
   return (
     <section id="about" className="container">
-      <SectionHeading>About Me</SectionHeading>
-      <div className="mt-6 flex flex-wrap-reverse items-center">
+      <SectionHeading title="About Me" />
+
+      <div className="mt-2 flex flex-wrap-reverse items-center">
         <div className="aspect-square max-w-96 basis-full max-lg:mx-auto lg:me-auto lg:basis-1/2">
           <DotLottieReact
             src="/lottie-files/coding.lottie"
@@ -17,31 +18,39 @@ const About = () => {
           />
         </div>
         <div className="basis-full lg:basis-1/2">
-          <article className="prose dark:prose-invert py-8">
-            <p>Hello World</p>
-            <ul>
-              <li>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Ratione excepturi possimus odit mollitia modi repellat
-                voluptatum officia voluptate. Unde labore in necessitatibus quae
-                neque non sunt, animi deleniti modi expedita.
-              </li>
-              <li>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Ratione excepturi possimus odit mollitia modi repellat
-                voluptatum officia voluptate. Unde labore in necessitatibus quae
-                neque non sunt, animi deleniti modi expedita.
-              </li>
-              <li>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Ratione excepturi possimus odit mollitia modi repellat
-                voluptatum officia voluptate. Unde labore in necessitatibus quae
-                neque non sunt, animi deleniti modi expedita.
-              </li>
-            </ul>
+          <article className="prose mx-auto py-8 dark:prose-invert">
             <h2>
-              <blockquote>If it works don&apos;t touch it</blockquote>
+              👋 Hi! {"I'm"} <span>Hady Osman</span>
             </h2>
+
+            <p className="intro-text">
+              A front-end developer obsessed with crafting pixel-perfect,
+              user-centric web experiences. I turn complex problems into{" "}
+              <strong>intuitive interfaces</strong> using modern tools like{" "}
+              <strong>React</strong> and <strong>Next.js</strong>.
+            </p>
+
+            <h3>🚀 What drives me?</h3>
+            <p>
+              Thriving on {'"aha!"'} moments — whether fixing stubborn bugs or
+              seeing users navigate apps effortlessly. Currently leveling up my{" "}
+              <strong>TypeScript</strong> skills and experimenting with
+              interactive animations.
+            </p>
+
+            <h3>🛠️ Beyond the code:</h3>
+            <ul>
+              <li>Binge-watching tech talks for inspiration</li>
+              <li>UI/UX enthusiast geeking over minimalist designs</li>
+              <li>☕ Built a Todo app during coffee brewing time</li>
+            </ul>
+
+            <h3>🌟 My mission:</h3>
+            <p>
+              Create apps so seamless that users forget {"they're"} interacting
+              with code — while developers whisper,{" "}
+              <q>Wait, how did he even do that? 🤯</q>
+            </p>
           </article>
         </div>
       </div>

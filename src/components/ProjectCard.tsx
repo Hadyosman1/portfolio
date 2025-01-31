@@ -15,36 +15,37 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({
-  project: { title, subTitle, coverImage, slug, githubRepoUrl, liveDemoUrl },
+  project: { title, brief, coverImage, slug, githubRepoUrl, liveDemoUrl },
   priority = false,
 }: ProjectCardProps) => {
   return (
-    <article className="group rounded-lg border shadow-md transition duration-300 hover:border-foreground">
-      <div className="relative overflow-hidden p-6 pb-0">
+    <article className="card group rounded-lg border bg-background shadow-md transition-all duration-300">
+      <div className="hover-animated-border" />
+      <div className="relative overflow-hidden p-4 pb-0 md:max-h-[250px]">
+        <Image
+          src={noiseBg}
+          alt="noise background"
+          className="object-cover invert-[250%] dark:invert-0"
+          fill
+        />
         <Link href={`/projects/${slug}`}>
-          <Image
-            src={noiseBg}
-            alt="noise background"
-            className="object-cover invert-[250%] dark:invert-0"
-            fill
-          />
-
+          <span className="sr-only">View {title} project Cover</span>
           <Image
             priority={priority}
             src={coverImage}
             alt={`${title} cover`}
             width={700}
-            height={350}
-            className="scale-[1.01] rounded-t-lg transition duration-300 group-hover:scale-105 group-hover:drop-shadow-lg"
+            height={250}
+            className="aspect-video rounded-t-lg border object-cover object-top transition duration-300 hover:scale-105 group-hover:drop-shadow-lg"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-transparent transition duration-300 group-hover:opacity-40" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-transparent transition duration-300" />
         </Link>
       </div>
 
       <div className="p-4">
         <h2 className="font-semibold">{title}</h2>
         <p className="mt-3 line-clamp-3 h-[76px] text-muted-foreground">
-          {subTitle}
+          {brief}
         </p>
 
         <div className="mt-5 flex flex-wrap items-end gap-x-2 gap-y-4">
@@ -63,7 +64,7 @@ const ProjectCard = ({
             </Button>
           </div>
 
-          <Button className="font-semibold" asChild>
+          <Button size="sm" className="font-semibold" asChild>
             <Link href={`/projects/${slug}`}>
               Details
               <ArrowUpRight size={16} />

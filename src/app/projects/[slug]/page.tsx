@@ -1,5 +1,7 @@
 import GithubIcon from "@/assets/icons/githubIcon";
+import ProjectGalleryCarousel from "@/components/project/ProjectGalleryCarousel";
 import { Button } from "@/components/ui/button";
+import MarkdownRenderer from "@/components/ui/markdown-renderer";
 import { projects } from "@/data/projects";
 import { ExternalLink } from "lucide-react";
 import { Metadata } from "next";
@@ -7,7 +9,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cache } from "react";
-import Zoom from "react-medium-image-zoom";
 
 const getProject = cache((slug: string) =>
   projects.find((p) => p.slug === slug),
@@ -34,14 +35,14 @@ export async function generateMetadata({
     title: {
       absolute: `${project.title} | Project`,
     },
-    description: project.subTitle,
+    description: project.brief,
     openGraph: {
       images: [
         {
           url: project.coverImage.src,
           width: project.coverImage.width,
           height: project.coverImage.height,
-          alt:"Project image"
+          alt: "Project image",
         },
       ],
     },
@@ -57,11 +58,11 @@ const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
 
   const {
     title,
-    subTitle,
+    brief,
     coverImage,
     liveDemoUrl,
     githubRepoUrl,
-    pageImages,
+    gallery,
     description,
   } = project;
 
@@ -73,26 +74,26 @@ const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
           src={coverImage}
           alt={`${title} cover`}
           fill
-          className="rounded-b-md object-cover object-top"
+          className="rounded-b-md object-cover object-top shadow-sm"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/85" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
       </div>
 
       <div className="flex flex-wrap items-start gap-x-2 gap-y-4 py-8">
         <div className="">
           <h1 className="text-2xl font-bold md:text-4xl">{title}</h1>
           <p className="mt-2 max-w-[500px] text-base text-muted-foreground md:mt-4 md:text-xl">
-            {subTitle}
+            {brief}
           </p>
         </div>
-        <div className="ms-auto space-x-2">
-          <Button size="default" className="text-[14px] font-medium" asChild>
+        <div className="ms-auto space-x-2 text-[14px] font-medium">
+          <Button size="sm" asChild>
             <Link target="_blank" href={githubRepoUrl}>
               Github Repo
               <GithubIcon />
             </Link>
           </Button>
-          <Button size="default" className="text-[14px] font-medium" asChild>
+          <Button size="sm" asChild>
             <Link target="_blank" href={liveDemoUrl}>
               Live Demo
               <ExternalLink size={16} />
@@ -101,31 +102,16 @@ const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
         </div>
       </div>
 
-      {pageImages.length > 0 && (
+      {gallery.length > 0 && (
         <div className="mt-6">
-          <h2 className="mb-8 text-xl font-semibold md:text-3xl">Pages</h2>
-          <ul className="grid grid-cols-1 gap-3 xs:grid-cols-2 md:grid-cols-3">
-            {pageImages.map((img, idx) => (
-              <li key={`page-${idx + 1}`}>
-                <Zoom>
-                  <Image
-                    width={650}
-                    height={750}
-                    src={img}
-                    alt={`page-${idx + 1}`}
-                    className="aspect-square rounded-md object-cover object-top shadow-md"
-                  />
-                </Zoom>
-              </li>
-            ))}
-          </ul>
+          <h2 className="mb-8 text-xl font-semibold md:text-3xl">Gallery</h2>
+          <ProjectGalleryCarousel images={gallery} />
         </div>
       )}
 
-      <article className="prose dark:prose-invert mt-6">
+      <article className="mt-6">
         <h2 className="mb-8 text-xl font-semibold md:text-3xl">Description</h2>
-
-        {description}
+        <MarkdownRenderer content={description} />
       </article>
     </div>
   );

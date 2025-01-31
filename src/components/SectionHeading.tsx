@@ -1,16 +1,16 @@
 import { cn } from "@/lib/utils";
-import { JSX, ReactNode } from "react";
+import { JSX } from "react";
 
 interface SectionHeadingProps {
   className?: string;
   el?: keyof JSX.IntrinsicElements;
-  children: ReactNode;
+  title: string;
 }
 
 const SectionHeading = ({
   className,
   el: El = "div",
-  children,
+  title,
 }: SectionHeadingProps) => {
   return (
     <El
@@ -19,7 +19,8 @@ const SectionHeading = ({
         className,
       )}
     >
-      {children}
+      <span className="text-4xl text-active-link md:text-5xl">{title[0]}</span>
+      {title.slice(1)}
     </El>
   );
 };
