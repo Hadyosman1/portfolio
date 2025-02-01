@@ -10,8 +10,10 @@ export { default as TypeScriptIcon } from "./icons/typeScriptIcon";
 export { default as ViteIcon } from "./icons/viteIcon";
 export { default as NodejsIcon } from "./icons/nodeJsIcon";
 export { default as GitIcon } from "./icons/gitIcon";
-export { default as WhatsappIcon } from "./icons/whatsAppIcon";
+export { default as WhatsAppIcon } from "./icons/whatsAppIcon";
 export { default as ReduxIcon } from "./icons/reduxIcon";
 export { default as ReactRouterIcon } from "./icons/reactRouterIcon";
-export { default as Logo } from "./icons/Logo";
+export { default as ZodIcon } from "./icons/ZodIcon";
+export { default as ReactHookFormIcon } from "./icons/ReactHookformIcon";
 
+export { default as Logo } from "./icons/Logo";

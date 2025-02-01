@@ -49,6 +49,8 @@ body {
     --intro-shape-color: 207 90% 54%;
 
     --active-link-color: 200 90% 54%;
+
+    --noise-bg-transparency: 0.02;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -245,12 +247,13 @@ body {
 
     &::before {
       content: "";
-      background: hsl(var(--secondary) / 0.04)
+      background: hsl(var(--secondary) / var(--noise-bg-transparency))
         url("./../../public/shapes/noise_bg.svg") 100% 100%;
       filter: invert(250%);
       position: absolute;
       inset: 0;
       z-index: -1;
+      opacity: 0.7;
     }
   }
 

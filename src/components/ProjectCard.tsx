@@ -28,7 +28,7 @@ const ProjectCard = ({
           className="object-cover invert-[250%] dark:invert-0"
           fill
         />
-        <Link href={`/projects/${slug}`}>
+        <Link className="relative block" href={`/projects/${slug}`}>
           <span className="sr-only">View {title} project Cover</span>
           <Image
             priority={priority}
@@ -36,9 +36,9 @@ const ProjectCard = ({
             alt={`${title} cover`}
             width={700}
             height={250}
-            className="aspect-video rounded-t-lg border object-cover object-top transition duration-300 hover:scale-105 group-hover:drop-shadow-lg"
+            className="peer/project-cover aspect-video rounded-t-lg border object-cover object-top transition duration-300 hover:scale-105 group-hover:drop-shadow-lg"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/85 via-transparent to-transparent transition duration-300" />
+          <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-background/85 via-transparent to-transparent transition duration-300 peer-hover/project-cover:scale-105" />
         </Link>
       </div>
 

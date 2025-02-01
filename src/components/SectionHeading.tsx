@@ -9,7 +9,7 @@ interface SectionHeadingProps {
 
 const SectionHeading = ({
   className,
-  el: El = "div",
+  el: El = "h2",
   title,
 }: SectionHeadingProps) => {
   return (

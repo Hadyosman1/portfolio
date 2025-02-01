@@ -7,7 +7,7 @@ const Projects = () => {
     <section id="projects" className="container">
       <SectionHeading title="Projects" />
 
-      <ul className="grid grid-cols-1 gap-3 py-6 md:grid-cols-2 md:py-8">
+      <ul className="grid grid-cols-1 gap-3 pb-14 pt-6 md:grid-cols-2 md:pt-8">
         {projects.map((project, idx) => (
           <li key={project.slug}>
             <ProjectCard priority={idx <= 4} project={project} />

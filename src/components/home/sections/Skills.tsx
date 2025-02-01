@@ -9,7 +9,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="mx-auto flex w-full max-w-[1440px] flex-col gap-4 overflow-x-hidden"
+      className="mx-auto flex w-full max-w-[1440px] flex-col gap-4 overflow-x-hidden mb-4"
     >
       <SectionHeading title="Skills" />
 

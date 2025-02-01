@@ -7,6 +7,8 @@ import "react-medium-image-zoom/dist/styles.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/Theme";
+import SocialsContacts from "@/components/SocialsContacts";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +43,8 @@ export default function RootLayout({
             <main className="grow">{children}</main>
             <Footer />
           </div>
+          <Toaster />
+          <SocialsContacts />
         </ThemeProvider>
       </body>
     </html>

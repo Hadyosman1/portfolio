@@ -29,7 +29,8 @@ const useActiveHref = () => {
       },
     );
 
-    const sections = document.querySelectorAll("main section[id]");
+    const sections = document.querySelectorAll("main > section[id]");
+
     sections.forEach((sec) => observer.observe(sec));
 
     return () => observer.disconnect();

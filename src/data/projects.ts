@@ -15,6 +15,18 @@ import flowShopGallery4 from "@/../public/projects/flow-shop/gallery_4.png";
 import flowShopGallery5 from "@/../public/projects/flow-shop/gallery_5.png";
 import flowShopGallery6 from "@/../public/projects/flow-shop/gallery_6.png";
 
+// Devo
+import devoCover from "@/../public/projects/devo/cover.png";
+import devoGallery1 from "@/../public/projects/devo/gallery_1.png";
+import devoGallery2 from "@/../public/projects/devo/gallery_2.png";
+import devoGallery3 from "@/../public/projects/devo/gallery_3.png";
+import devoGallery4 from "@/../public/projects/devo/gallery_4.png";
+import devoGallery5 from "@/../public/projects/devo/gallery_5.png";
+import devoGallery6 from "@/../public/projects/devo/gallery_6.png";
+import devoGallery7 from "@/../public/projects/devo/gallery_7.png";
+import devoGallery8 from "@/../public/projects/devo/gallery_8.png";
+import devoGallery9 from "@/../public/projects/devo/gallery_9.png";
+
 // Weather App
 import weatherAppCover from "@/../public/projects/weather-app/cover.png";
 import weatherAppGallery1 from "@/../public/projects/weather-app/gallery_1.png";
@@ -31,18 +43,6 @@ import todoAppGallery4 from "@/../public/projects/todo-app/gallery_4.png";
 import todoAppGallery5 from "@/../public/projects/todo-app/gallery_5.png";
 import todoAppGallery6 from "@/../public/projects/todo-app/gallery_6.png";
 import todoAppGallery7 from "@/../public/projects/todo-app/gallery_7.png";
-
-// Devo
-import devoCover from "@/../public/projects/devo/cover.png";
-import devoGallery1 from "@/../public/projects/devo/gallery_1.png";
-import devoGallery2 from "@/../public/projects/devo/gallery_2.png";
-import devoGallery3 from "@/../public/projects/devo/gallery_3.png";
-import devoGallery4 from "@/../public/projects/devo/gallery_4.png";
-import devoGallery5 from "@/../public/projects/devo/gallery_5.png";
-import devoGallery6 from "@/../public/projects/devo/gallery_6.png";
-import devoGallery7 from "@/../public/projects/devo/gallery_7.png";
-import devoGallery8 from "@/../public/projects/devo/gallery_8.png";
-import devoGallery9 from "@/../public/projects/devo/gallery_9.png";
 
 export interface Project {
   slug: string;
@@ -113,6 +113,29 @@ Flow Jobs is a feature-rich job portal designed to connect employers with qualif
     gallery: [flowJobsGallery1, flowJobsGallery2, flowJobsGallery3],
   },
   {
+    slug: "devo",
+    title: "Devo social media app",
+    brief:
+      "A social media app that allows you to connect with friends and family.",
+    coverImage: devoCover,
+    githubRepoUrl: "https://github.com/Hadyosman1/Next.js-Social-Media-App",
+    liveDemoUrl: "https://learn-next-js-pied-eight.vercel.app",
+    description: `
+      // TODO: Add description
+    `,
+    gallery: [
+      devoGallery1,
+      devoGallery2,
+      devoGallery3,
+      devoGallery4,
+      devoGallery5,
+      devoGallery6,
+      devoGallery7,
+      devoGallery8,
+      devoGallery9,
+    ],
+  },
+  {
     slug: "weather-app",
     title: "Weather App",
     brief:
@@ -181,29 +204,6 @@ The Todo App is a perfect blend of simplicity and functionality, designed to hel
       todoAppGallery5,
       todoAppGallery6,
       todoAppGallery7,
-    ],
-  },
-  {
-    slug: "devo",
-    title: "Devo social media app",
-    brief:
-      "A social media app that allows you to connect with friends and family.",
-    coverImage: devoCover,
-    githubRepoUrl: "https://github.com/Hadyosman1/Next.js-Social-Media-App",
-    liveDemoUrl: "https://learn-next-js-pied-eight.vercel.app",
-    description: `
-
-    `,
-    gallery: [
-      devoGallery1,
-      devoGallery2,
-      devoGallery3,
-      devoGallery4,
-      devoGallery5,
-      devoGallery6,
-      devoGallery7,
-      devoGallery8,
-      devoGallery9,
     ],
   },
 ];
