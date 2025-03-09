@@ -23,7 +23,7 @@ const HireMeButton = ({
         className,
       )}
     >
-      <a href="mailto:hady.dev.2002@gmail.com">
+      <a href="mailto:hady.osman.dev@gmail.com">
         Hire Me <ArrowRight className="transition group-hover:translate-x-1" />
       </a>
     </Button>

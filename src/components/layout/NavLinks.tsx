@@ -20,7 +20,7 @@ const NavLinks = ({ className, closeMenu }: NavLinksProps) => {
   const { activeHref, setActiveHref } = useActiveHref();
 
   return (
-    <div className={cn("flex items-center gap-1.5", className)}>
+    <div className={cn("flex items-center gap-1", className)}>
       {links.map(({ href, label }) => (
         <Button
           key={label}
@@ -28,7 +28,7 @@ const NavLinks = ({ className, closeMenu }: NavLinksProps) => {
           size="sm"
           variant="ghost"
           className={cn(
-            "text-[14px] font-medium transition-[box-shadow_300ms,color_300ms]",
+            "text-[14px] font-semibold transition-all duration-300",
             activeHref === href &&
               "text-active-link ring-[1px] ring-active-link hover:text-active-link",
           )}

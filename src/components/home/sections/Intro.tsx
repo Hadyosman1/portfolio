@@ -8,7 +8,7 @@ const Intro = () => {
       <div className="container flex h-full flex-col items-center gap-5 max-lg:gap-20 lg:flex-row">
         <div id="intro-content" className="grow max-lg:pt-10">
           <h1 className="text-center text-xl font-extrabold text-foreground lg:text-start lg:text-3xl">
-            {"Hello, I'm Hady Osman"}
+            {"Hello👋, I'm Hady Osman"}
             <br />a Frontend Developer.
           </h1>
           <p className="mt-6 max-w-[480px] text-balance text-center text-base font-medium text-muted-foreground lg:text-start lg:text-lg">

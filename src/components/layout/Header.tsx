@@ -8,7 +8,7 @@ import { Suspense } from "react";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-10 h-[64px] bg-background/60 shadow shadow-border backdrop-blur">
+    <header className="sticky top-0 z-20 h-[64px] bg-background/60 shadow shadow-border backdrop-blur">
       <nav className="container flex items-center justify-between gap-3 py-3">
         <Suspense>
           <MobileMenu className="inline-flex md:hidden" />

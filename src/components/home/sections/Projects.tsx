@@ -4,16 +4,20 @@ import { projects } from "@/data/projects";
 
 const Projects = () => {
   return (
-    <section id="projects" className="container">
+    <section id="projects">
       <SectionHeading title="Projects" />
-
-      <ul className="grid grid-cols-1 gap-3 pb-14 pt-6 md:grid-cols-2 md:pt-8">
-        {projects.map((project, idx) => (
-          <li key={project.slug}>
-            <ProjectCard priority={idx <= 4} project={project} />
-          </li>
-        ))}
-      </ul>
+      <div className="relative">
+        <div className="bg-dots" />
+        <div className="container">
+          <ul className="grid grid-cols-1 gap-x-6 gap-y-8 py-20 md:grid-cols-2">
+            {projects.map((project, idx) => (
+              <li key={project.slug}>
+                <ProjectCard priority={idx <= 4} project={project} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </section>
   );
 };

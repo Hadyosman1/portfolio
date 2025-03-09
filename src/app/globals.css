@@ -4,7 +4,7 @@
 
 html {
   @apply scroll-pt-[70px] scroll-smooth;
-  scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--background));
+  scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--secondary) / 0.5);
   scrollbar-width: thin;
 }
 
@@ -50,7 +50,7 @@ body {
 
     --active-link-color: 200 90% 54%;
 
-    --noise-bg-transparency: 0.02;
+    --noise-bg-transparency: 0.01;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -155,6 +155,10 @@ body {
       );
   }
 
+  .socials-contacts-vertical {
+    @apply !left-auto right-3 top-1/2 !h-[200px] !w-12 !translate-x-0 !duration-200 -translate-y-1/2 [writing-mode:vertical-lr];
+  }
+
   .skills-container-bg {
     background: var(--skills-bg);
   }
@@ -242,6 +246,27 @@ body {
     @apply max-w-5xl;
   }
 
+  .bg-dots {
+    position: absolute;
+    inset: 0;
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, hsl(var(--background)), transparent 11%)
+        no-repeat,
+      linear-gradient(to top, hsl(var(--background)), transparent 11%) no-repeat,
+      radial-gradient(
+          circle,
+          hsl(var(--muted-foreground) / 0.1) 15%,
+          transparent 5%
+        )
+        repeat;
+    background-size:
+      100% 100%,
+      100% 100%,
+      13px 13px;
+  }
+
   .bg-noise {
     position: relative;
 
@@ -257,8 +282,8 @@ body {
     }
   }
 
-  :is(.dark) .bg-noise {
-    &::before {
+  :is(.dark) {
+    :is(.bg-noise)::before {
       filter: invert(0%);
     }
   }
@@ -294,6 +319,19 @@ body {
 
     &:hover .hover-animated-border::before {
       opacity: 1;
+    }
+  }
+
+  .get-in-touch {
+    position: relative;
+    padding-bottom: 15px;
+
+    &::after {
+      content: url("./../../public/shapes/arrow.svg");
+      position: absolute;
+      top: 0;
+      translate: 10px 15%;
+      rotate: -25deg;
     }
   }
 

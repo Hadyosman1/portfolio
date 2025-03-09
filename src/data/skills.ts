@@ -6,7 +6,7 @@ import {
   HtmlIcon,
   JavaScriptIcon,
   NextJsIcon,
-  NodejsIcon,
+  // NodejsIcon,
   ReactIcon,
   ReactRouterIcon,
   ReduxIcon,
@@ -33,6 +33,6 @@ const skills = [
   { name: "Zod", icon: ZodIcon, color: "#274d82" },
   { name: "React Hook Form", icon: ReactHookFormIcon, color: "#EC5990" },
   { name: "Vite", icon: ViteIcon, color: "#bd34fe" },
-  { name: "Node.js", icon: NodejsIcon, color: "#3f8b3d" },
+  // { name: "Node.js", icon: NodejsIcon, color: "#3f8b3d" },
 ];
 export default skills;

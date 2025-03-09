@@ -27,6 +27,16 @@ import devoGallery7 from "@/../public/projects/devo/gallery_7.png";
 import devoGallery8 from "@/../public/projects/devo/gallery_8.png";
 import devoGallery9 from "@/../public/projects/devo/gallery_9.png";
 
+// Almazaq Alasyawi
+import almazaqAlasyawiCover from "@/../public/projects/almazaq-alasyawi/cover.png";
+import almazaqAlasyawiGallery1 from "@/../public/projects/almazaq-alasyawi/gallery_1.png";
+import almazaqAlasyawiGallery2 from "@/../public/projects/almazaq-alasyawi/gallery_2.png";
+import almazaqAlasyawiGallery3 from "@/../public/projects/almazaq-alasyawi/gallery_3.png";
+import almazaqAlasyawiGallery4 from "@/../public/projects/almazaq-alasyawi/gallery_4.png";
+import almazaqAlasyawiGallery5 from "@/../public/projects/almazaq-alasyawi/gallery_5.png";
+import almazaqAlasyawiGallery6 from "@/../public/projects/almazaq-alasyawi/gallery_6.png";
+import almazaqAlasyawiGallery7 from "@/../public/projects/almazaq-alasyawi/gallery_7.png";
+
 // Weather App
 import weatherAppCover from "@/../public/projects/weather-app/cover.png";
 import weatherAppGallery1 from "@/../public/projects/weather-app/gallery_1.png";
@@ -121,7 +131,24 @@ Flow Jobs is a feature-rich job portal designed to connect employers with qualif
     githubRepoUrl: "https://github.com/Hadyosman1/Next.js-Social-Media-App",
     liveDemoUrl: "https://learn-next-js-pied-eight.vercel.app",
     description: `
-      // TODO: Add description
+Devo is a comprehensive social media application designed to facilitate connections between friends and family. The app offers a variety of features that enhance the social networking experience, making it easy to share moments, and stay updated with loved ones.
+
+**Key Features:**
+- **User Profiles:** Create and customize personal profiles with photos and articles.
+- **News Feed:** Stay updated with posts from friends and family in a dynamic news feed.
+- **Post Creation:** Share text updates and photos with your network.
+- **Comments:** Engage with posts through comments fostering interaction.
+- **Responsive Design:** Enjoy a consistent experience across various devices, including mobile and desktop.
+
+**Technologies Used:**
+- **Frontend:** Next.js, Tailwind CSS
+- **Backend:** Next.js APIs
+- **Database:** PostgreSQL
+- **File Uploads:** Firebase
+- **Authentication:** JWT (JSON Web Tokens)
+- **Deployment:** Vercel
+
+Devo combines a clean and intuitive interface with powerful social networking features, making it a go-to platform for staying connected with your social circle. Whether you're sharing life updates, engaging with friends' posts, Devo provides a comprehensive and enjoyable social media experience.
     `,
     gallery: [
       devoGallery1,
@@ -133,6 +160,49 @@ Flow Jobs is a feature-rich job portal designed to connect employers with qualif
       devoGallery7,
       devoGallery8,
       devoGallery9,
+    ],
+  },
+  {
+    slug: "almazaq-alasyawi",
+    title: "Almazaq Alasyawi",
+    brief:
+      "Almazaq Alasyawi is an Arabic restaurant landing page that showcases the restaurant's menu and offers a seamless dining experience.",
+    coverImage: almazaqAlasyawiCover,
+    githubRepoUrl:
+      "https://github.com/Hadyosman1/arabic-restaurant-landing-page",
+    liveDemoUrl: "https://arabic-restaurant.vercel.app",
+    description: `
+Almazaq Alasyawi is an Arabic restaurant landing page designed to showcase the restaurant's menu and offer a seamless dining experience. The page features a visually appealing layout, showcasing the restaurant's ambiance and menu items.
+
+**Key Features:**
+- **Menu Display:** The landing page features a visually appealing layout showcasing the restaurant's menu items.
+- **Responsive Design:** The page is designed to be responsive, ensuring a seamless experience across various devices.
+- **Interactive Elements:** The page includes interactive elements such as buttons and links for easy navigation.
+- **Content Organization:**
+- **Menu:** The menu section showcases a variety of dishes with detailed descriptions and prices.
+- **About Us:** A brief introduction to the restaurant's story and mission.
+- **Contact Information:** Contact details for inquiries and reservations.
+- **Footer:** Includes social media links and copyright information.
+**Technologies Used:**
+- **Frontend:** 
+  - HTML
+  - CSS
+  - JavaScript
+  - Next.js
+  - Tailwind CSS
+  
+**Deployment:** Vercel
+
+is landing page serves as a gateway to the restaurant's offerings, providing a visually appealing and user-friendly experience for potential diners.
+    `,
+    gallery: [
+      almazaqAlasyawiGallery1,
+      almazaqAlasyawiGallery2,
+      almazaqAlasyawiGallery3,
+      almazaqAlasyawiGallery4,
+      almazaqAlasyawiGallery5,
+      almazaqAlasyawiGallery6,
+      almazaqAlasyawiGallery7,
     ],
   },
   {

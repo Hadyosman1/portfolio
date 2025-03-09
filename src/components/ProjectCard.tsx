@@ -49,7 +49,7 @@ const ProjectCard = ({
         </p>
 
         <div className="mt-5 flex flex-wrap items-end gap-x-2 gap-y-4">
-          <div className="grow space-x-2">
+          <div className="space-x-2">
             <Button size="sm" variant="outline" asChild>
               <Link target="_blank" href={liveDemoUrl}>
                 Live Demo
@@ -64,12 +64,14 @@ const ProjectCard = ({
             </Button>
           </div>
 
-          <Button size="sm" className="font-semibold" asChild>
-            <Link href={`/projects/${slug}`}>
-              Details
-              <ArrowUpRight size={16} />
-            </Link>
-          </Button>
+          <div className="flex grow justify-end">
+            <Button size="sm" className="font-semibold" asChild>
+              <Link href={`/projects/${slug}`}>
+                Details
+                <ArrowUpRight size={16} />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </article>

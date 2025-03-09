@@ -25,7 +25,7 @@ const useActiveHref = () => {
       },
       {
         root: null,
-        threshold: 0.6,
+        threshold: 0.3,
       },
     );
 
@@ -33,7 +33,9 @@ const useActiveHref = () => {
 
     sections.forEach((sec) => observer.observe(sec));
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, [pathname]);
 
   return { setActiveHref, activeHref };

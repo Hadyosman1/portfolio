@@ -32,6 +32,7 @@ export async function generateMetadata({
   if (!project) notFound();
 
   return {
+    metadataBase: new URL("https://portfolio-hady-osman.vercel.app"),
     title: {
       absolute: `${project.title} | Project`,
     },
@@ -40,8 +41,8 @@ export async function generateMetadata({
       images: [
         {
           url: project.coverImage.src,
-          width: project.coverImage.width,
-          height: project.coverImage.height,
+          width: 1200,
+          height: 630,
           alt: "Project image",
         },
       ],
