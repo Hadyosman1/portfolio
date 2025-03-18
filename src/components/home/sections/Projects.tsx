@@ -8,8 +8,8 @@ const Projects = () => {
       <SectionHeading title="Projects" />
       <div className="relative">
         <div className="bg-dots" />
-        <div className="container">
-          <ul className="grid grid-cols-1 gap-x-6 gap-y-8 py-20 md:grid-cols-2">
+        <div className="max-w-[1200px] px-[1rem] mx-auto">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5 py-20 lg:grid-cols-3">
             {projects.map((project, idx) => (
               <li key={project.slug}>
                 <ProjectCard priority={idx <= 4} project={project} />

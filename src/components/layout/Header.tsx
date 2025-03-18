@@ -8,14 +8,14 @@ import { Suspense } from "react";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-20 h-[64px] bg-background/60 shadow shadow-border backdrop-blur">
+    <header className="blur-dots-bg sticky top-0 z-20 h-[64px]">
       <nav className="container flex items-center justify-between gap-3 py-3">
         <Suspense>
           <MobileMenu className="inline-flex md:hidden" />
         </Suspense>
 
         <div className="flex justify-start md:basis-1/6">
-          <Link href="/">
+          <Link href="/#intro-section">
             <Logo className="size-10" />
             <span className="sr-only">Home page</span>
           </Link>

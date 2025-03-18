@@ -15,5 +15,7 @@ export { default as ReduxIcon } from "./icons/reduxIcon";
 export { default as ReactRouterIcon } from "./icons/reactRouterIcon";
 export { default as ZodIcon } from "./icons/ZodIcon";
 export { default as ReactHookFormIcon } from "./icons/ReactHookformIcon";
+export { default as VscodeIcon } from "./icons/VscodeIcon";
+export { default as ShadcnIcon } from "./icons/ShadcnIcon";
 
 export { default as Logo } from "./icons/Logo";

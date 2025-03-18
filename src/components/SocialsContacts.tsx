@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 
 import { GithubIcon, WhatsAppIcon } from "@/assets";
@@ -28,9 +30,13 @@ const socialsContacts = [
 
 const SocialsContacts = () => {
   return (
-    <ul
+    <motion.ul
+      initial={{ opacity: 0, x: 35, y: 100 }}
+      animate={{ opacity: 1, x: "-50%", y: "-50%" }}
+      exit={{ opacity: 0, x: 35, y: 100 }}
+      transition={{ duration: 0.7, delay: 0.5 }}
       id="socials-contacts-container"
-      className="fixed bottom-5 left-1/2 z-20 flex h-11 w-[280px] -translate-x-1/2 overflow-hidden rounded-full border border-muted-foreground/60 bg-secondary/60 backdrop-blur-sm transition-all duration-300 hover:[box-shadow:0_0_10px_-2px_hsl(var(--foreground)_/_0.7)]"
+      className="blur-dots-bg fixed bottom-0 left-1/2 z-20 flex h-11 w-[280px] transform-gpu overflow-hidden rounded-full border border-muted-foreground/60 hover:[box-shadow:0_0_10px_-2px_hsl(var(--foreground)_/_0.7)]"
     >
       {socialsContacts.map(({ label, icon, url }) => (
         <li className="grow" key={label}>
@@ -38,7 +44,7 @@ const SocialsContacts = () => {
             asChild
             size="icon"
             variant="ghost"
-            className="group h-full w-full justify-center rounded-none [&_svg]:size-6"
+            className="group h-full w-full justify-center rounded-none hover:bg-secondary/50 [&_svg]:size-6"
           >
             <a
               href={url}
@@ -52,7 +58,7 @@ const SocialsContacts = () => {
           </Button>
         </li>
       ))}
-    </ul>
+    </motion.ul>
   );
 };
 

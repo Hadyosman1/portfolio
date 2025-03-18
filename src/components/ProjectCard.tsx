@@ -1,9 +1,9 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
-
 import { type Project } from "@/data/projects";
-
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import GithubIcon from "@/assets/icons/githubIcon";
 
@@ -19,7 +19,7 @@ const ProjectCard = ({
   priority = false,
 }: ProjectCardProps) => {
   return (
-    <article className="card group rounded-lg border bg-background shadow-md transition-all duration-300">
+    <motion.article className="card group rounded-lg border bg-background shadow-md transition-all duration-300">
       <div className="hover-animated-border" />
       <div className="relative overflow-hidden p-4 pb-0 md:max-h-[250px]">
         <Image
@@ -36,7 +36,7 @@ const ProjectCard = ({
             alt={`${title} cover`}
             width={700}
             height={250}
-            className="peer/project-cover aspect-video rounded-t-lg border object-cover object-top transition duration-300 hover:scale-105 group-hover:drop-shadow-lg"
+            className="peer/project-cover aspect-video rounded-t-xl border object-cover object-top transition duration-300 hover:scale-105 group-hover:drop-shadow-lg"
           />
           <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-background/85 via-transparent to-transparent transition duration-300 peer-hover/project-cover:scale-105" />
         </Link>
@@ -44,37 +44,34 @@ const ProjectCard = ({
 
       <div className="p-4">
         <h2 className="font-semibold">{title}</h2>
-        <p className="mt-3 line-clamp-3 h-[76px] text-muted-foreground">
+        <p className="mt-3 line-clamp-3 min-h-[3lh] text-muted-foreground">
           {brief}
         </p>
 
         <div className="mt-5 flex flex-wrap items-end gap-x-2 gap-y-4">
-          <div className="space-x-2">
-            <Button size="sm" variant="outline" asChild>
-              <Link target="_blank" href={liveDemoUrl}>
-                Live Demo
-                <ExternalLink size={16} />
-              </Link>
-            </Button>
-            <Button size="sm" variant="outline" asChild>
-              <Link target="_blank" href={githubRepoUrl}>
-                Github Repo
-                <GithubIcon />
-              </Link>
-            </Button>
-          </div>
+          <Button size="sm" variant="outline" className="grow" asChild>
+            <Link target="_blank" href={liveDemoUrl}>
+              Live Demo
+              <ExternalLink size={16} />
+            </Link>
+          </Button>
 
-          <div className="flex grow justify-end">
-            <Button size="sm" className="font-semibold" asChild>
-              <Link href={`/projects/${slug}`}>
-                Details
-                <ArrowUpRight size={16} />
-              </Link>
-            </Button>
-          </div>
+          <Button size="sm" variant="outline" className="grow" asChild>
+            <Link target="_blank" href={githubRepoUrl}>
+              Github Repo
+              <GithubIcon className="size-4" />
+            </Link>
+          </Button>
+
+          <Button size="sm" className="grow gap-1 font-semibold" asChild>
+            <Link href={`/projects/${slug}`}>
+              Details
+              <ArrowUpRight size={16} />
+            </Link>
+          </Button>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 };
 

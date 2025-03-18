@@ -15,6 +15,7 @@ import {
   ViteIcon,
   ZodIcon,
   ReactHookFormIcon,
+  ShadcnIcon,
 } from "@/assets";
 
 const skills = [
@@ -33,6 +34,7 @@ const skills = [
   { name: "Zod", icon: ZodIcon, color: "#274d82" },
   { name: "React Hook Form", icon: ReactHookFormIcon, color: "#EC5990" },
   { name: "Vite", icon: ViteIcon, color: "#bd34fe" },
+  { name: "Shadcn", icon: ShadcnIcon, color: "#9aaaca" },
   // { name: "Node.js", icon: NodejsIcon, color: "#3f8b3d" },
 ];
 export default skills;

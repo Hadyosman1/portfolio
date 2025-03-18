@@ -100,6 +100,34 @@ body {
 }
 
 @layer components {
+  .blur-dots-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(
+          to bottom,
+          var(--custom-bg-color, hsl(var(--background) / 0.55)),
+          transparent
+        )
+        center / 100% 100%,
+      linear-gradient(
+          to top,
+          var(--custom-bg-color, hsl(var(--background) / 0.55)),
+          transparent
+        )
+        center / 100% 100%,
+      radial-gradient(
+          circle,
+          hsl(var(--accent-foreground) / 0.4) 10%,
+          transparent 5%
+        )
+        center / 8px 8px repeat;
+    backdrop-filter: blur(1.5px);
+    filter: blur(1px);
+  }
+
   #intro-section {
     position: relative;
     z-index: 2;
@@ -156,7 +184,8 @@ body {
   }
 
   .socials-contacts-vertical {
-    @apply !left-auto right-3 top-1/2 !h-[200px] !w-12 !translate-x-0 !duration-200 -translate-y-1/2 [writing-mode:vertical-lr];
+    @apply !left-auto right-0 top-1/2 !h-[200px] !w-12 !duration-200 [writing-mode:vertical-lr];
+    transform: translateX(-0.25rem) translateY(-50%) !important;
   }
 
   .skills-container-bg {
@@ -313,12 +342,13 @@ body {
         opacity: 0;
         transition: all 0.3s;
         rotate: 45deg;
-        animation: hover-animated-border 9s infinite linear;
+        animation: hover-animated-border 9s infinite ease-in-out paused;
       }
     }
 
     &:hover .hover-animated-border::before {
       opacity: 1;
+      animation-play-state: running;
     }
   }
 
@@ -335,23 +365,27 @@ body {
     }
   }
 
-  .skill-intro-animation {
-    scale: 1.1;
-    translate: 0 -30%;
-    transition: all 0.3s;
-    animation: skill-intro 1.2s 0.3s ease-out infinite alternate;
+  .nav-link {
+    overflow: hidden;
+    .nav-link-effect {
+      transform: translateY(30px);
+      text-shadow:
+        0 -30px 0 currentColor,
+        0 0 5px currentColor;
+      transition:
+        transform 0.3s cubic-bezier(0.275, 0.885, 0.5, 1.275),
+        color 0.3s cubic-bezier(0.275, 0.885, 0.5, 1.275);
+    }
+
+    &:is(:hover, :focus, .active) {
+      .nav-link-effect {
+        transform: translateY(0);
+      }
+    }
   }
 
-  /* key frames */
-  @keyframes skill-intro {
-    30% {
-      scale: 1;
-      translate: 0 -30%;
-    }
-    100% {
-      scale: 1.1;
-      translate: 0;
-    }
+  .icon-drop-shadow {
+    filter: drop-shadow(0px 0px 0.5rem var(--drop-shadow-color, #ffffff8c));
   }
 
   @keyframes intro-shape {
