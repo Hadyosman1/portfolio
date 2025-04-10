@@ -27,6 +27,19 @@ import devoGallery7 from "@/../public/projects/devo/gallery_7.png";
 import devoGallery8 from "@/../public/projects/devo/gallery_8.png";
 import devoGallery9 from "@/../public/projects/devo/gallery_9.png";
 
+// Tanstack Store
+import tanstackStoreCover from "@/../public/projects/tanstack-store/cover.png";
+import tanstackStoreGallery1 from "@/../public/projects/tanstack-store/gallery_1.png";
+import tanstackStoreGallery2 from "@/../public/projects/tanstack-store/gallery_2.png";
+import tanstackStoreGallery3 from "@/../public/projects/tanstack-store/gallery_3.png";
+import tanstackStoreGallery4 from "@/../public/projects/tanstack-store/gallery_4.png";
+import tanstackStoreGallery5 from "@/../public/projects/tanstack-store/gallery_5.png";
+import tanstackStoreGallery6 from "@/../public/projects/tanstack-store/gallery_6.png";
+import tanstackStoreGallery7 from "@/../public/projects/tanstack-store/gallery_7.png";
+import tanstackStoreGallery8 from "@/../public/projects/tanstack-store/gallery_8.png";
+import tanstackStoreGallery9 from "@/../public/projects/tanstack-store/gallery_9.png";
+import tanstackStoreGallery10 from "@/../public/projects/tanstack-store/gallery_10.png";
+
 // Almazaq Alasyawi
 import almazaqAlasyawiCover from "@/../public/projects/almazaq-alasyawi/cover.png";
 import almazaqAlasyawiGallery1 from "@/../public/projects/almazaq-alasyawi/gallery_1.png";
@@ -123,6 +136,46 @@ Flow Jobs is a feature-rich job portal designed to connect employers with qualif
     gallery: [flowJobsGallery1, flowJobsGallery2, flowJobsGallery3],
   },
   {
+    slug: "tanstack-store",
+    title: "Tanstack Store",
+    brief: `An advanced e-commerce platform built with TanStack Query and modern React tools, enabling smooth product browsing, filtering, and infinite scrolling.`,
+    coverImage: tanstackStoreCover,
+    githubRepoUrl: "https://github.com/Hadyosman1/tanstack-store",
+    liveDemoUrl: "https://tanstack-store.vercel.app",
+    description: `
+Tanstack Store is a modern and responsive e-commerce platform designed to showcase the power of React Query (TanStack Query) in managing remote data efficiently. The app offers a clean UI, robust product browsing experience, and advanced features like infinite scrolling and dynamic filters.
+
+**Key Features:**
+- **Infinite Scrolling:** Automatically loads more products as users scroll down the page.
+- **Product Filtering:** Dynamic filters by category and price for better UX.
+- **Product Details Page:** Displays high-quality images, description, price, and metadata.
+- **Loading & Error States:** Seamless loading indicators and error handling using React Query.
+- **Responsive Design:** Optimized layout for mobile, tablet, and desktop users.
+
+**Technologies Used:**
+- **Frontend:** Next.js 15, React, Tailwind CSS, TypeScript
+- **Data Fetching & Caching:** TanStack Query (React Query)
+- **State Management:** TanStack Query, Zustand
+- **UI Components:** shadcn/ui
+- **Deployment:** Vercel
+
+This project showcases how to use React Query effectively for pagination, caching, and syncing data in the background, making it a solid example for modern web apps.
+`,
+
+    gallery: [
+      tanstackStoreGallery1,
+      tanstackStoreGallery2,
+      tanstackStoreGallery3,
+      tanstackStoreGallery4,
+      tanstackStoreGallery5,
+      tanstackStoreGallery6,
+      tanstackStoreGallery7,
+      tanstackStoreGallery8,
+      tanstackStoreGallery9,
+      tanstackStoreGallery10,
+    ],
+  },
+  {
     slug: "devo",
     title: "Devo social media app",
     brief:
@@ -162,6 +215,7 @@ Devo combines a clean and intuitive interface with powerful social networking fe
       devoGallery9,
     ],
   },
+
   {
     slug: "almazaq-alasyawi",
     title: "Almazaq Alasyawi",

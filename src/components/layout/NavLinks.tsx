@@ -24,7 +24,7 @@ const containerVariants: Variants = {
   animate: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.2,
     },
   },
 };
@@ -34,7 +34,7 @@ const itemVariants: Variants = {
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5 },
+    transition: { duration: 0.3 },
   },
 };
 

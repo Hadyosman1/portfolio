@@ -32,7 +32,7 @@ const SocialsContacts = () => {
   return (
     <motion.ul
       initial={{ opacity: 0, x: 35, y: 100 }}
-      animate={{ opacity: 1, x: "-50%", y: "-50%" }}
+      animate={{ opacity: 1, x: "-50%", y: "-30%" }}
       exit={{ opacity: 0, x: 35, y: 100 }}
       transition={{ duration: 0.7, delay: 0.5 }}
       id="socials-contacts-container"

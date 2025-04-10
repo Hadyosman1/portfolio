@@ -26,7 +26,7 @@ const containerVariants: Variants = {
   initial: { opacity: 0.5 },
   animate: {
     opacity: 1,
-    transition: { staggerChildren: 0.2 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -40,7 +40,7 @@ const iconVariants: Variants = {
   animate: {
     opacity: 1,
     scale: [0.3, 1.1, 1],
-    transition: { duration: 0.5 },
+    transition: { duration: 0.3 },
   },
 };
 

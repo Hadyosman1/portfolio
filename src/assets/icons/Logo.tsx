@@ -13,7 +13,7 @@ const pathVariants: Variants = {
     strokeOpacity: 1,
     strokeDasharray: 1,
     transition: {
-      duration: 1.5,
+      duration: 1.1,
       ease: "easeInOut",
     },
   },

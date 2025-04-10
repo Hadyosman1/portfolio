@@ -5,7 +5,7 @@ import MyPicture from "@/components/MyPicture";
 const Intro = () => {
   return (
     <section id="intro-section">
-      <div className="container relative z-[2] flex h-full flex-col items-center gap-5 max-lg:gap-20 lg:flex-row">
+      <div className="container relative z-[2] flex h-full flex-col items-center gap-5 pt-8 max-lg:gap-20 lg:flex-row">
         <p className="absolute left-[1rem] top-1 z-[-1] w-[calc(100%_-_2rem)] select-none text-center font-sans text-3xl font-black uppercase -tracking-wide [-webkit-text-fill-color:transparent] [-webkit-text-stroke:1px_hsl(var(--muted-foreground)_/_0.5)] sm:text-4xl md:left-[2rem] md:text-6xl lg:top-8 lg:text-start lg:text-8xl">
           Web Developer
         </p>
