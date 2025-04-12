@@ -18,6 +18,7 @@ import {
   ReduxIcon,
   ShadcnIcon,
   TailwindCssIcon,
+  TanstackQueryIcon,
   TypeScriptIcon,
   VscodeIcon,
 } from "@/assets";
@@ -58,6 +59,7 @@ const iconPositions = [
   { x: "19.5rem", y: "1rem", Icon: GithubIcon, color: "#76887899" },
   { x: "21rem", y: "4.5rem", Icon: VscodeIcon, color: "#4c9ed7" },
   { x: "22rem", y: "8rem", Icon: ShadcnIcon, color: "#9aaaca" },
+  { x: "23rem", y: "12rem", Icon: TanstackQueryIcon, color: "#00435b" },
 ];
 
 const MyPicture = () => {
