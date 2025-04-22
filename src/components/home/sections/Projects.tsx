@@ -4,6 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { projects as allProjects } from "@/data/projects";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const PAGE_SIZE = 6;
 
@@ -18,9 +19,17 @@ const Projects = () => {
         <div className="mx-auto max-w-[1200px] px-[1rem]">
           <ul className="grid grid-cols-1 gap-5 pb-12 pt-20 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, idx) => (
-              <li key={project.slug}>
+              <motion.li
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                }}
+                viewport={{ once: true, amount: 0.4 }}
+                key={project.slug}
+              >
                 <ProjectCard priority={idx <= 4} project={project} />
-              </li>
+              </motion.li>
             ))}
           </ul>
           {allProjects.length > projects.length && (
