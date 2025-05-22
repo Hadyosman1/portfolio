@@ -36,7 +36,7 @@ const SocialsContacts = () => {
       exit={{ opacity: 0, x: 35, y: 100 }}
       transition={{ duration: 0.7, delay: 0.5 }}
       id="socials-contacts-container"
-      className="blur-dots-bg fixed bottom-0 left-1/2 z-20 flex h-11 w-[280px] transform-gpu overflow-hidden rounded-full border border-muted-foreground/60 hover:[box-shadow:0_0_10px_-2px_hsl(var(--foreground)_/_0.7)]"
+      className="blur-dots-bg fixed bottom-0 left-1/2 z-20 flex h-11 w-[280px] transform-gpu overflow-hidden rounded-full border border-muted-foreground/60 hover:[box-shadow:0_0_10px_-2px_hsl(var(--foreground)/0.7)]"
     >
       {socialsContacts.map(({ label, icon, url }) => (
         <li className="grow" key={label}>

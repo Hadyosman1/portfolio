@@ -110,7 +110,7 @@ const Contact = () => {
                 <Form {...form}>
                   <form
                     noValidate
-                    className="mx-auto max-w-md space-y-3 rounded-lg border bg-card px-3 py-6 transition-all duration-300 hover:[box-shadow:0_0_5px_-2px_hsl(var(--foreground)_/_0.7)] md:px-6"
+                    className="mx-auto max-w-md space-y-3 rounded-lg border bg-card px-3 py-6 transition-all duration-300 hover:[box-shadow:0_0_5px_-2px_hsl(var(--foreground)/0.7)] md:px-6"
                     onSubmit={handleSubmit(onSubmit)}
                   >
                     <h3 className="get-in-touch text-center text-2xl font-bold">

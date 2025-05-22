@@ -25,7 +25,7 @@ const ProjectCard = ({
         <Image
           src={noiseBg}
           alt="noise background"
-          className="object-cover invert-[250%] dark:invert-0"
+          className="object-cover invert-250 dark:invert-0"
           fill
         />
         <Link className="relative block" href={`/projects/${slug}`}>
@@ -38,7 +38,7 @@ const ProjectCard = ({
             height={250}
             className="peer/project-cover aspect-video rounded-t-xl border object-cover object-top transition duration-300 hover:scale-105 group-hover:drop-shadow-lg"
           />
-          <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-t from-background/85 via-transparent to-transparent transition duration-300 peer-hover/project-cover:scale-105" />
+          <div className="pointer-events-none absolute inset-0 h-full w-full bg-linear-to-t from-background/85 via-transparent to-transparent transition duration-300 peer-hover/project-cover:scale-105" />
         </Link>
       </div>
 

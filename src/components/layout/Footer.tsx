@@ -21,7 +21,7 @@ const Footer = () => {
             entry.isIntersecting,
           );
           scrollToTopRef.current?.classList.toggle(
-            "!right-4",
+            "right-4!",
             entry.isIntersecting,
           );
         });
@@ -45,7 +45,7 @@ const Footer = () => {
           ref={scrollToTopRef}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           size="icon"
-          className="absolute -right-14 top-0 -translate-y-1/2 rounded-full border shadow transition-all duration-500"
+          className="absolute -right-14 top-0 -translate-y-1/2 rounded-full border shadow-sm transition-all duration-500"
         >
           <ArrowUp size={26} />
           <span className="sr-only">Scroll to top</span>

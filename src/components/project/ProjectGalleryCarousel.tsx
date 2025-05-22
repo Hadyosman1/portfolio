@@ -40,7 +40,10 @@ const ProjectGalleryCarousel = ({ images }: ProjectGalleryCarouselProps) => {
       <Carousel setApi={setApi}>
         <CarouselContent>
           {images.map((img, idx) => (
-            <CarouselItem className="basis-full" key={idx}>
+            <CarouselItem
+              className="basis-full md:basis-1/2"
+              key={`${img}-${idx}`}
+            >
               <Zoom>
                 <div className="bg-noise relative h-[60svh] sm:h-[80svh]">
                   <Image
@@ -48,17 +51,17 @@ const ProjectGalleryCarousel = ({ images }: ProjectGalleryCarouselProps) => {
                     src={img}
                     alt={`Project gallery image ${idx + 1}`}
                     fill
-                    className="object-contain object-center selection:bg-transparent"
+                    className="rounded-md object-cover border object-center selection:bg-transparent"
                   />
                 </div>
               </Zoom>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-2 bg-background/60" />
-        <CarouselNext className="right-2 bg-background/60" />
+        <CarouselPrevious className="bg-background/60 left-2" />
+        <CarouselNext className="bg-background/60 right-2" />
       </Carousel>
-      <div className="py-2 text-center text-sm text-muted-foreground">
+      <div className="text-muted-foreground py-2 text-center text-sm">
         Slide {current} of {count}
       </div>
     </>
