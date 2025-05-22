@@ -19,5 +19,6 @@ export { default as VscodeIcon } from "./icons/VscodeIcon";
 export { default as ShadcnIcon } from "./icons/ShadcnIcon";
 export { default as TanstackQueryIcon } from "./icons/TanstackQueryIcon";
 export { default as PcIcon } from "./icons/PcIcon";
+export { default as ZustandIcon } from "./icons/ZustandIcon";
 
 export { default as Logo } from "./icons/Logo";

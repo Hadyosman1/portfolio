@@ -17,6 +17,7 @@ import {
   ReactHookFormIcon,
   ShadcnIcon,
   TanstackQueryIcon,
+  ZustandIcon,
 } from "@/assets";
 
 const skills = [
@@ -26,6 +27,7 @@ const skills = [
   { name: "JavaScript", icon: JavaScriptIcon, color: "#f3dc1f" },
   { name: "React", icon: ReactIcon, color: "#7ccfff" },
   { name: "Redux", icon: ReduxIcon, color: "#8a63d2" },
+  { name: "Zustand", icon: ZustandIcon, color: "#c27c67" },
   { name: "React Query", icon: TanstackQueryIcon, color: "#00435b" },
   { name: "Tailwind CSS", icon: TailwindCssIcon, color: "#4fd1c5" },
   { name: "Bootstrap", icon: BootstrapIcon, color: "#7952b3" },

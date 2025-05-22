@@ -21,6 +21,7 @@ import {
   TanstackQueryIcon,
   TypeScriptIcon,
   VscodeIcon,
+  ZustandIcon,
 } from "@/assets";
 
 const containerVariants: Variants = {
@@ -58,8 +59,9 @@ const iconPositions = [
   { x: "16.4rem", y: "-2rem", Icon: GitIcon, color: "#f05033" },
   { x: "19.5rem", y: "1rem", Icon: GithubIcon, color: "#76887899" },
   { x: "21rem", y: "4.5rem", Icon: VscodeIcon, color: "#4c9ed7" },
-  { x: "22rem", y: "8rem", Icon: ShadcnIcon, color: "#9aaaca" },
-  { x: "23rem", y: "12rem", Icon: TanstackQueryIcon, color: "#00435b" },
+  { x: "22rem", y: "8.5rem", Icon: ShadcnIcon, color: "#9aaaca" },
+  { x: "23rem", y: "12.5rem", Icon: TanstackQueryIcon, color: "#00435b" },
+  { x: "23.5rem", y: "16.5rem", Icon: ZustandIcon, color: "#c27c67" },
 ];
 
 const MyPicture = () => {
