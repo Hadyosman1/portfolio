@@ -16,16 +16,17 @@ const Projects = () => {
       <SectionHeading title="Projects" />
       <div className="relative">
         <div className="bg-dots pointer-events-none" />
-        <div className="mx-auto max-w-[1200px] px-[1rem]">
-          <ul className="grid grid-cols-1 gap-5 pb-12 pt-20 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto max-w-[1200px] px-4">
+          <ul className="grid grid-cols-1 gap-5 pt-12 pb-16 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, idx) => (
               <motion.li
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   duration: 0.5,
+                  ease: "easeInOut",
                 }}
-                viewport={{ once: true, amount: 0.4 }}
+                viewport={{ once: true, amount: 0.3 }}
                 key={project.slug}
               >
                 <ProjectCard priority={idx <= 4} project={project} />

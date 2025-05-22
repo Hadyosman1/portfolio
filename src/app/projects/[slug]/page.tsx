@@ -75,9 +75,9 @@ const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
           src={coverImage}
           alt={`${title} cover`}
           fill
-          className="rounded-b-md object-cover object-top shadow-sm"
+          className="rounded-b-md object-cover object-top shadow-xs"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-background/40 to-transparent" />
       </div>
 
       <div className="flex flex-wrap items-start gap-x-2 gap-y-4 py-8">

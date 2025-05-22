@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { LucideMenu } from "lucide-react";
-import { cn, twConfig } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import {
   Sheet,
   SheetContent,
@@ -28,19 +28,19 @@ const MobileMenu = ({ className }: MobileMenuProps) => {
     setIsSheetOpen(false);
   }, [pathname, searchParams]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= parseInt(twConfig.theme.screens.md)) {
-        setIsSheetOpen(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth >= parseInt(twConfig?.theme?.screens?.md||"")) {
+  //       setIsSheetOpen(false);
+  //     }
+  //   };
 
-    window.addEventListener("resize", handleResize);
+  //   window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
 
   return (
     <>
