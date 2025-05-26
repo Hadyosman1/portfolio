@@ -1,14 +1,34 @@
+"use client";
+
 import { Logo } from "@/assets";
 import Link from "next/link";
 import { ThemeToggle } from "../Theme";
 import NavLinks from "./NavLinks";
 import HireMeButton from "../HireMeButton";
 import MobileMenu from "./MobileMenu";
-import { Suspense } from "react";
+import { Suspense, useEffect, useRef } from "react";
 
 const Header = () => {
+  const headerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleHeaderShadow = () => {
+      headerRef.current?.classList.toggle("shadow", window.scrollY > 120);
+      headerRef.current?.classList.toggle(
+        "shadow-border/30",
+        window.scrollY > 120,
+      );
+    };
+
+    window.addEventListener("scrollend", handleHeaderShadow);
+
+    return () => {
+      window.removeEventListener("scrollend", handleHeaderShadow);
+    };
+  }, []);
+
   return (
-    <header className="blur-dots-bg sticky top-0 z-20 h-[64px]">
+    <header ref={headerRef} className="blur-dots-bg sticky top-0 z-20 h-[64px]">
       <nav className="container flex items-center justify-between gap-3 py-3">
         <Suspense>
           <MobileMenu className="inline-flex md:hidden" />
