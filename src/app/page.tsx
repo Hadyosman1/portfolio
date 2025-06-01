@@ -1,9 +1,9 @@
 import {
   About,
-  Contact,
   Intro,
   Projects,
   Skills,
+  Contact,
 } from "@/components/home/sections";
 
 const Home = () => {

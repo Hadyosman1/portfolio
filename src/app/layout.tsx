@@ -21,9 +21,9 @@ export const metadata: Metadata = {
     template: "%s | Portfolio",
     default: "Hady Osman",
   },
-  description:
-    "Hello, I'm Hady Osman, A Frontend Developer. \nI specialize in building innovative, scalable, and maintainable web applications using cutting-edge technologies.",
+  description: `Hi, I'm Hady Osman — a Frontend Developer specializing in building innovative, scalable, and maintainable web applications using modern technologies.`,
   metadataBase: new URL("https://portfolio-hady-osman.vercel.app"),
+
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -43,6 +43,13 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
+  twitter: {
+    card: "summary_large_image",
+    title: "Hady Osman's Portfolio",
+    description: "Check out my work!",
+    creator: "@hadyOsman_",
+    images: ["https://portfolio-hady-osman.vercel.app/opengraph-image.png"],
+  },
   openGraph: {
     title: "Hady Osman's Portfolio",
     description: "Check out my work!",
@@ -50,7 +57,7 @@ export const metadata: Metadata = {
     siteName: "Hady Osman's Portfolio",
     images: [
       {
-        url: "./opengraph-image.png",
+        url: "https://portfolio-hady-osman.vercel.app/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "My Portfolio Preview",
@@ -67,6 +74,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="NTFef-xI-yQfCP8r9q2n4hY9U9gJD6duN6ukbuhHhYU"
+        />
+      </head>
       <body className={`${geistSans.className} antialiased`}>
         <ThemeProvider
           attribute="class"
