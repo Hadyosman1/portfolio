@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://portfolio-hady-osman.vercel.app
+
+# Sitemaps
+Sitemap: https://portfolio-hady-osman.vercel.app/sitemap.xml

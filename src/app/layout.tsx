@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 
-import "./globals.css";
 import "react-medium-image-zoom/dist/styles.css";
+import "./globals.css";
 
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { ThemeProvider } from "@/components/Theme";
+import Header from "@/components/layout/Header";
 import SocialsContacts from "@/components/SocialsContacts";
-import { Toaster } from "@/components/ui/toaster";
 import SplashScreen from "@/components/SplashScreen";
+import { ThemeProvider } from "@/components/Theme";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

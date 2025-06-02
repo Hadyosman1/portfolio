@@ -30,6 +30,7 @@ import devoGallery9 from "@/../public/projects/devo/gallery_9.png";
 // Tanstack Store
 import tanstackStoreCover from "@/../public/projects/tanstack-store/cover.png";
 import tanstackStoreGallery1 from "@/../public/projects/tanstack-store/gallery_1.png";
+import tanstackStoreGallery10 from "@/../public/projects/tanstack-store/gallery_10.png";
 import tanstackStoreGallery2 from "@/../public/projects/tanstack-store/gallery_2.png";
 import tanstackStoreGallery3 from "@/../public/projects/tanstack-store/gallery_3.png";
 import tanstackStoreGallery4 from "@/../public/projects/tanstack-store/gallery_4.png";
@@ -38,7 +39,6 @@ import tanstackStoreGallery6 from "@/../public/projects/tanstack-store/gallery_6
 import tanstackStoreGallery7 from "@/../public/projects/tanstack-store/gallery_7.png";
 import tanstackStoreGallery8 from "@/../public/projects/tanstack-store/gallery_8.png";
 import tanstackStoreGallery9 from "@/../public/projects/tanstack-store/gallery_9.png";
-import tanstackStoreGallery10 from "@/../public/projects/tanstack-store/gallery_10.png";
 
 // Almazaq Alasyawi
 import almazaqAlasyawiCover from "@/../public/projects/almazaq-alasyawi/cover.png";
@@ -66,6 +66,14 @@ import todoAppGallery4 from "@/../public/projects/todo-app/gallery_4.png";
 import todoAppGallery5 from "@/../public/projects/todo-app/gallery_5.png";
 import todoAppGallery6 from "@/../public/projects/todo-app/gallery_6.png";
 import todoAppGallery7 from "@/../public/projects/todo-app/gallery_7.png";
+
+// Montagaa Elsalam
+import montagaaElsalamCover from "@/../public/projects/montagaa-elsalam/cover.png";
+import montagaaElsalamGallery1 from "@/../public/projects/montagaa-elsalam/gallery_1.png";
+import montagaaElsalamGallery2 from "@/../public/projects/montagaa-elsalam/gallery_2.png";
+import montagaaElsalamGallery3 from "@/../public/projects/montagaa-elsalam/gallery_3.png";
+import montagaaElsalamGallery4 from "@/../public/projects/montagaa-elsalam/gallery_4.png";
+import montagaaElsalamGallery5 from "@/../public/projects/montagaa-elsalam/gallery_5.png";
 
 export interface Project {
   slug: string;
@@ -111,29 +119,40 @@ Flow Shop is a cutting-edge e-commerce platform built to provide users with a se
     ],
   },
   {
-    slug: "flow-jobs",
-    title: "Flow Jobs",
+    slug: "montagaa-el-salam",
+    title: "Montagaa El-salam",
+    coverImage: montagaaElsalamCover,
+    liveDemoUrl: "https://arabic-tourist-resort.vercel.app",
+    githubRepoUrl:
+      "https://github.com/Hadyosman1/Arabic-tourist-resort-landing-page",
     brief:
-      "A dynamic job portal connecting employers with qualified candidates through an intuitive platform.",
-    coverImage: flowJobsCover,
-    githubRepoUrl: "https://github.com/Hadyosman1/flow-jobs",
-    liveDemoUrl: "https://flow-jobs-ten.vercel.app",
+      "A modern Arabic landing page for a tourist resort in Egypt. Built with Next.js 15 and Tailwind CSS, the page highlights the resort's services, images, and facilities. The design is fully responsive and optimized for Arabic-speaking users.",
     description: `
-Flow Jobs is a feature-rich job portal designed to connect employers with qualified candidates quickly and efficiently. It simplifies the job application process with real-time search and filtering options.
+Elsalam Resort is a modern landing page built for a tourist resort in Egypt. The page showcases the resort’s services, facilities, and atmosphere using visually appealing sections and images. It is designed with a mobile-first approach and is fully responsive across all screen sizes.
+
+**Important Note:**  
+The page content is entirely in Arabic, as it is tailored for Arabic-speaking users.
 
 **Key Features:**
-- Advanced job search and filtering system.
-- Clean, user-friendly interface for easy navigation.
-- Real-time search functionality for jobs.
-- Responsive design for a seamless experience on various devices.
+- Hero section with a compelling call to action.
+- Sections for services, amenities, and highlights.
+- Gallery-style image section for visual engagement.
+- Fully responsive layout for different devices.
 
-**Technologies Used:**
-- **Frontend:** React, Next.js, Tailwind CSS
-- **Backend:** Node.js, Express
-- **Database:** PostgreSQL
+**Tech Stack:**
+- **Frontend:** Next.js 15, React, Tailwind CSS, TypeScript  
+- **UI Components:** shadcn/ui  
 - **Deployment:** Vercel
-    `,
-    gallery: [flowJobsGallery1, flowJobsGallery2, flowJobsGallery3],
+
+This project demonstrates your ability to build real-world, user-focused landing pages with clean design and responsive behavior.
+`,
+    gallery: [
+      montagaaElsalamGallery1,
+      montagaaElsalamGallery2,
+      montagaaElsalamGallery3,
+      montagaaElsalamGallery4,
+      montagaaElsalamGallery5,
+    ],
   },
   {
     slug: "tanstack-store",
@@ -329,5 +348,30 @@ The Todo App is a perfect blend of simplicity and functionality, designed to hel
       todoAppGallery6,
       todoAppGallery7,
     ],
+  },
+  {
+    slug: "flow-jobs",
+    title: "Flow Jobs",
+    brief:
+      "A dynamic job portal connecting employers with qualified candidates through an intuitive platform.",
+    coverImage: flowJobsCover,
+    githubRepoUrl: "https://github.com/Hadyosman1/flow-jobs",
+    liveDemoUrl: "https://flow-jobs-ten.vercel.app",
+    description: `
+Flow Jobs is a feature-rich job portal designed to connect employers with qualified candidates quickly and efficiently. It simplifies the job application process with real-time search and filtering options.
+
+**Key Features:**
+- Advanced job search and filtering system.
+- Clean, user-friendly interface for easy navigation.
+- Real-time search functionality for jobs.
+- Responsive design for a seamless experience on various devices.
+
+**Technologies Used:**
+- **Frontend:** React, Next.js, Tailwind CSS
+- **Backend:** Node.js, Express
+- **Database:** PostgreSQL
+- **Deployment:** Vercel
+    `,
+    gallery: [flowJobsGallery1, flowJobsGallery2, flowJobsGallery3],
   },
 ];
