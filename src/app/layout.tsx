@@ -87,14 +87,24 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-svh flex-col">
+          {/* <div className="flex min-h-svh flex-col">
             <Header />
             <main className="grow">{children}</main>
             <Footer />
           </div>
           <Toaster />
           <SocialsContacts />
-          <SplashScreen />
+          <SplashScreen /> */}
+          <div className="flex h-screen px-6 leading-relaxed grow items-center justify-center font-bold text-balance md:text-2xl lg:text-4xl">
+            <p className="text-center">
+              Sorry, We are currently under maintenance.
+              <br />
+              <span className=" text-base text-muted-foreground">
+                Please Contact me using the links below.
+              </span>
+            </p>
+          </div>
+          <SocialsContacts />
         </ThemeProvider>
       </body>
     </html>
